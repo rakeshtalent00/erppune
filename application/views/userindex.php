@@ -1,3 +1,7 @@
+
+<?php 
+define("_ROOT",base_url());
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +41,7 @@
 	</style>
 </head>
 <body>
+	<h1> <?php echo _ROOT; ?></h1>
     <article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
             <div class="d-flex">
@@ -380,3 +385,6 @@
 });
 </script>
 </html>
+
+https://github.com/rakeshtalent00/erppune.git
+rakeshtalent00
