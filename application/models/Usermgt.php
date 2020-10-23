@@ -18,7 +18,7 @@ class Usermgt  extends CI_Model{
 		// $data['createdOn'] = date("Y/m/d");
 		// $data['userType'] = "user";
 		//echo "<pre>";print_r($data);die("Okk");
-		if(!$this->db->insert('user', $data))
+		if(!$this->db->insert('users', $data))
 		{
 			return false;
 		}

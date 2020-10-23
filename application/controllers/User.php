@@ -15,11 +15,17 @@ class User extends CI_Controller{
 	function userform(){
 		$data['universityList'] = $this->Usermgt->universitylist();
 		$data['userlist'] = $this->Usermgt->userlist();
-		$this->load->view("userindex",$data);
+		$this->load->view("userIndex",$data);
+	}
+
+	function roleForm(){
+		$data['universityList'] = $this->Usermgt->universitylist();
+		$data['userlist'] = $this->Usermgt->userlist();
+		$this->load->view("roleIndex",$data);
 	}
 	
 	function createuser(){
-		echo "<pre>";print_r($_REQUEST);die("Okk");
+		//echo "<pre>";print_r($_REQUEST);die("Okk");
 		 $data = $_POST;
 		// $data['first_name']= $data['firstName'];
 		// $data['last_name']= $data['lastName'];
