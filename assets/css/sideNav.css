@@ -1,0 +1,43 @@
+.side-nav{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 20%;
+    background: #0C8FBE;
+    height: 100%;
+}
+
+.side-nav .container{
+    padding: 10px;
+}
+.side-nav ul{
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+    overflow: hidden;
+}
+.side-nav ul li{
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 0;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    color: #fff;
+}
+.side-nav ul li a{
+    color: #fff;
+    text-decoration : none;
+}
+.side-nav ul li:hover,
+.side-nav ul li.active{
+    background: #244895;
+
+}
+.side-nav .submenu li:hover{
+    background: #0C8FBE;
+}
+.side-nav .submenu{
+    display: none;
+    padding:0; 
+    background: #244895;
+}

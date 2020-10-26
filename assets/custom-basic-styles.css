@@ -1,0 +1,15 @@
+body{
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+.d-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.f-col{
+	flex-direction: column;
+}

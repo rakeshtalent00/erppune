@@ -1,0 +1,57 @@
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: gray; 
+	z-index: 99;
+}
+header > .d-flex{
+	padding: 10px 20px; 
+	justify-content: space-between;
+}
+.logo-image{
+	margin-left: 20px;
+	max-width: 200px;
+}
+.user-image{
+	max-width: 50px;
+	border-radius: 100%;
+}
+header li.d-flex{
+	align-items: center;
+}
+.hamburger-menu {
+	cursor: pointer;
+}
+.hamburger-menu span{
+	display: block;
+	width: 30px;
+	height: 3px;
+	background-color: #fff;
+	margin: 6px 0;
+}
+.header-right p{
+	margin: 0;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+}
+.header-right p img{
+	margin-right: 10px;
+}
+.header-right ul{
+	display: none;
+	position: absolute;
+    background: gray;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+.header-right ul li{
+	padding: 8px 0;
+    padding-left: 10px;
+	border-bottom: 1px solid;
+	color: #fff;
+	cursor: pointer;
+}

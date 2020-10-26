@@ -1,0 +1,41 @@
+body{
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+.d-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+.f-col{
+	flex-direction: column;
+}
+.form-group{
+	width: 100%;
+	margin: 10px 0;
+	position: relative;
+}
+.d-flex .form-group{
+	width: 48%;
+
+}
+.form-group textarea{
+	width: 100%;
+}
+.d-flex .form-group select,
+.d-flex .form-group input{
+	width: 100%;
+}
+.cta-submit{
+	text-align: center;
+}
+.cta-submit input{
+	width: 40%;
+	margin: auto;
+	padding: 10px 5px;
+
+}
+
