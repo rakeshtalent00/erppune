@@ -13,12 +13,29 @@ class Usermgt  extends CI_Model{
 
 		
 	public function createuser($data){
-		//die("okkk");
-		// $data['createdBy'] = "123"
-		// $data['createdOn'] = date("Y/m/d");
-		// $data['userType'] = "user";
-		//echo "<pre>";print_r($data);die("Okk");
-		if(!$this->db->insert('users', $data))
+		$insertUser = $data;
+		unset($insertUser['roleId']); 
+		if(!$this->db->insert('users', $insertUser))
+		{
+			return false;
+		}
+		else
+		{
+			$roleData = array();
+			$roleData = array('userId' => $this->db->insert_id(),'roleId' => $data['roleId']);
+			if(!$this->db->insert('acl_roles_users', $roleData))
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}	
+		}
+	}
+
+	public function createRole($data){
+		if(!$this->db->insert('acl_roles', $data))
 		{
 			return false;
 		}
@@ -30,9 +47,11 @@ class Usermgt  extends CI_Model{
         
 	public function updateuser($userid,$data){
 		$this->db->where('userId',$userid);  
-		if(!$this->db->update('users', $data)){
+		$this->db->update('users', $data);
+		if(!($this->db->insert_id())){
 			return false;
 		}else{
+			
 			return true;
 		}
 	}
@@ -43,8 +62,14 @@ class Usermgt  extends CI_Model{
 	}
 
 	public function userlist(){
-		$res = $this->db->query("SELECT id,userName FROM `users` where status = 0");
+		$res = $this->db->query("SELECT * FROM `users` where status = 0 and deleted =  0");
 		return $res;
+	}
+
+	public function getUserData($userId){
+		$this->db->where('id',$userId);
+        $query=$this->db->get('users');
+        return $query->result();
 	}
 
 }
