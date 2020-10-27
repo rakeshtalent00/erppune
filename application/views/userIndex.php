@@ -126,8 +126,18 @@ define("_ROOT",base_url());
     });
 });
   $(document).ready(function() {
-  	$("input").change(function(){
-	  	let inpValue = $(this).val();
+
+  	$('header .hamburger-menu').click(function(){
+		$('.side-nav').toggleClass('squeezed');
+		$('.te-container').toggleClass('stretched');
+	});
+
+
+	if ($("input").val() != null || $("input").val() != ''){
+		$(this).addClass('shifted');
+	}
+	$("input").change(function(){
+  		var inpValue = $(this).val();
 	  	$(this).addClass('shifted');
 	  	if(inpValue == null || inpValue == '' || inpValue == ' ' || inpValue == '  ' ) {
   			$(this).val(null);

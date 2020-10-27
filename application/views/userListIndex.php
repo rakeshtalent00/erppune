@@ -13,38 +13,30 @@ define("_ROOT",base_url());
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/custom-basic-styles.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
-
-		
-	    </head>
+		<script src="https://kit.fontawesome.com/9b792aadd6.js" crossorigin="anonymous"></script>
+    </head>
 	<style type="text/css">
 		body{
 			background: #c5c5c5;
 		}
-		.te-container{
-			position: relative;
-			margin: 0;
-			width: 77%;
-			top: 70px;
-			margin-left: auto;
-			padding: 20px;
-		}
+		
 		.users-view{
-			padding: 20px;
+			padding: 10px;
 			background: #fff; 
 		}
 		.user-details{
 			display: none;
 		}
 		.user-detail{
-			padding: 10px;
+			padding: 5px;
 			/*padding: 0 10px 10px 10px;*/
-			background: #0C8FBE;
+			background: #4f6dac;
 			border-radius: 5px;
 			border-top-left-radius: 0px;
 			border-top-right-radius: 0px;
 		}
 		.user-preview{
-			padding: 0 20px;
+			padding: 0 10px;
 			justify-content: space-between;
 			background: #fff;
 			box-shadow: 0px 0px 3px 0px #0C8FBE;
@@ -57,14 +49,18 @@ define("_ROOT",base_url());
 		.user-preview p{
 			margin: 5px 0; 
 		}
+		.cta-edit-user{
+			font-size: 13px;
+		}
 		.user-preview .cta-edit-user a{
 			text-align: center;
 			text-decoration: underline;
 			color: #244895;
+			z-index: 999;
 		}
 		.user-detail .d-flex {
 			justify-content: flex-start;
-			padding: 20px;
+			padding: 10px;
 			background: #fff;
 			border-radius: 5px;
 			border-top-left-radius: 0px;
@@ -72,8 +68,7 @@ define("_ROOT",base_url());
 
 		}
 		.user-details .d-flex p{
-			width: 20%;
-			margin: 5px 0;
+			margin: 10px;
 		}
 		.user-details p span{
 			color: #0C8FBE;
@@ -96,9 +91,27 @@ define("_ROOT",base_url());
 		#example_filter{
 			margin-bottom: 20px;
 		}
+		.table-header{
+			justify-content: flex-start;
+			margin-bottom: 10px;
+		}
+		.table-header .search-bar input{
+			border : none;
+			border-bottom: 1px solid #244895;
+		}
+		.table-header .search-bar input:focus{
+			outline: none;
+			border-bottom-color: #c5c5c5;
+		}
 		thead{
-			background: #07d2f3;
+			background: #244895;
 			color: #fff;
+		}
+		tbody tr:nth-child(odd) {
+			cursor: pointer;
+		}
+		tbody td{
+			padding-left: 5px;
 		}
 		#example_filter input[type="search"] {
 		    background: #fff;
@@ -106,25 +119,51 @@ define("_ROOT",base_url());
 		tbody tr:nth-child(4n+1){
 			background: #e0e0e0;  
 		}
+		.pagination {
+			margin-top: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.pagination a {
+			text-decoration: none;
+			color: #000;
+			border-right: 1px solid #000;
+			padding: 0px 5px; 
+		}
+		.pagination a:last-child {
+			border-right: none;
+		}
+		.pagination a.active {
+		  background-color: #88D5E9;
+		  color: #fff;
+		}
+
+		.pagination a:hover:not(.active) {background-color: #88D5E9; color: #fff;}
 	</style>
 	<body>
 		<?php require_once("header/header.php"); ?>
-		 <main class="d-flex">
-		 <?php require_once("sideNav/sideNav.php"); ?>
-			<main class="te-container users-view">
-		  
-			<table id="example" class="display" style="width:100%">
-		        <thead>
-		            <tr>
-		                <th>First Name</th>
-		                <th>Last Name</th>
-		                <th>Email</th>
-		                <th>Employee Code</th>
-		                <th></th>
-		            </tr>
-		        </thead>
-		        <tbody>
-				<?php foreach($data=$userlist->result_array() as $row){ ?>	
+		<main class="d-flex">
+		 	<?php require_once("sideNav/sideNav.php"); ?>
+			<div class="te-container">
+				<div class="users-view"> 
+					<div class="d-flex table-header">
+						<div class="search-bar">
+							<input type="text" name="userSearch" class="" placeholder="Search User" />
+						</div>
+						<div class="sort-bar"></div>
+					</div>
+					<table id="example" class="display" style="width:100%" cellspacing="5px">
+				        <thead>
+				            <tr>
+				                <th>First Name</th>
+				                <th>Last Name</th>
+				                <th>Email</th>
+				                <th>Employee Code</th>
+				                <th></th>
+				            </tr>
+				        </thead>
+				        <?php foreach($data=$userlist->result_array() as $row){ ?>	
 		        	<tr>
 		                <td><?php echo $row['firstName']; ?></td>
 		                <td><?php echo $row['lastName']; ?></td>
@@ -165,8 +204,22 @@ define("_ROOT",base_url());
 				</table>
 						</td>
 		            </tr>
-		        </tbody>
-		    </table>
+				        </tbody>
+				    </table>
+				    <div class="table-footer">
+						<div class="pagination">
+						    <a href="#">&laquo;</a>
+						    <a href="#">1</a>
+						    <a href="#" class="active">2</a>
+						    <a href="#">3</a>
+						    <a href="#">4</a>
+						    <a href="#">5</a>
+						    <a href="#">6</a>
+						    <a href="#">&raquo;</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 	</body>
   
@@ -179,13 +232,20 @@ define("_ROOT",base_url());
 				$(this).addClass('active');
 				$('.user-details').slideUp();
 				$(this).find('.user-details').slideDown();
-				});
+			});
+
+			$('header .hamburger-menu').click(function(){
+				$('.side-nav').toggleClass('squeezed');
+				$('.te-container').toggleClass('stretched');
 			});
 
 			$('tr').click(function(){
 				console.log($(this).parent().parent());
 				$(this).next('.user-details').slideToggle();
 			});
+		});
+
+
 	// $("#editData").on("click",function(){
 	// 	var dataId = $("#dataId").val();
 	// 	var url = "<?php echo _ROOT; ?>/User/updateUserForm";
