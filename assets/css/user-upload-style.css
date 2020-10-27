@@ -13,9 +13,6 @@ h2{
 	font-size: 18px;
 	color: #244895;
 }
-label{
-    font-weight: normal !important;
-}
 label.floating-label{
     position: absolute;
 	top: 6px;
@@ -78,16 +75,8 @@ select{
     margin:0 0 3px 0;
     padding: 0px;
     display:block;
-    font-weight: bold;
 }
-.form-style-1 input[type=text], 
-.form-style-1 input[type=date],
-.form-style-1 input[type=datetime],
-.form-style-1 input[type=number],
-.form-style-1 input[type=search],
-.form-style-1 input[type=time],
-.form-style-1 input[type=url],
-.form-style-1 input[type=email],
+.form-style-1 input,
 textarea, 
 select{
     box-sizing: border-box;
@@ -103,14 +92,7 @@ select{
     -o-transition: all 0.30s ease-in-out;
     outline: none;  
 }
-.form-style-1 input[type=text]:focus, 
-.form-style-1 input[type=date]:focus,
-.form-style-1 input[type=datetime]:focus,
-.form-style-1 input[type=number]:focus,
-.form-style-1 input[type=search]:focus,
-.form-style-1 input[type=time]:focus,
-.form-style-1 input[type=url]:focus,
-.form-style-1 input[type=email]:focus,
+.form-style-1 input,
 .form-style-1 textarea:focus, 
 .form-style-1 select:focus{
     
@@ -130,7 +112,13 @@ select{
 .form-style-1 .required{
     color:red;
 }
-
+.fa-eye{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 16px;
+    color: #244895;
+}
 .form-group{
     width: 100%;
     margin: 15px 0;

@@ -11,6 +11,22 @@ $(document).ready(function() {
 
 
 /*
+**  Script for access permission switch
+*/
+	$('.sub-permission').parent().addClass('has-submenu');
+
+	$('.access-permission .perm-label').click(function(){
+		$(this).parent().parent().find('.sub-permission').slideToggle();
+		$(this).find('i').toggleClass('chev-rotate');
+	});
+
+    $('.switch input').click(function () {
+        $(this).toggleClass('ver-changed');
+        $('main').toggleClass('ver-lite');
+        $('main').toggleClass('ver-adv');
+    });
+
+/*
 ** Script for sub menu
 */
 
@@ -33,6 +49,9 @@ $(document).ready(function() {
             $(this).addClass('shifted');
     });
 
+	$("select").change(function(){
+		$(this).parent().find('label').css({"color":"#244895","font-weight":"bold"});
+	});
 	$("input").change(function(){
   		var inpValue = $(this).val();
 	  	$(this).addClass('shifted');
@@ -41,5 +60,13 @@ $(document).ready(function() {
   			$(this).val(null);
 	  		$(this).removeClass('shifted');
 	  	}	
+	});
+	
+	$('.fa-eye').on('click', function(){
+		$(this).next('input').toggleClass('pass-active');
+		if( $('input').hasClass('pass-active') ) {
+			$(this).next('input').attr('type','text');
+		} else
+		$(this).next('input').attr('type','password');
 	});
 });	

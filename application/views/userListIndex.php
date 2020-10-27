@@ -25,12 +25,15 @@ define("_ROOT",base_url());
 			<div class="te-container">
 				<div class="users-view"> 
 					<div class="d-flex table-header">
-						<div class="sort-bar"></div>
+						<div class="sort-bar d-flex">
+							<p>Sort By: </p>
+							<input type="text" name="userSearch" class="" placeholder="Sort By" />
+						</div>
 						<div class="search-bar">
 							<input type="text" name="userSearch" class="" placeholder="Search User" />
 						</div>
 					</div>
-					<table id="example" class="display" style="width:100%" cellspacing="5px">
+					<table id="example" class="display" style="width:100%" cellspacing="3px">
 				        <thead>
 				            <tr>
 				                <th>First Name</th>
@@ -97,6 +100,117 @@ define("_ROOT",base_url());
 					</div>
 				</div>
 			</div>
+		<!--	<style>
+				.access-control {
+					padding: 20px;
+					background: #fff;	
+				}
+				.user-role.form-group{
+					width: 60%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: flex-start;
+					align-items: center;
+				}
+				.user-role.form-group select{
+					width: 60%;
+					margin-left: 20px;
+				}
+			</style>
+			<div class="te-container">
+				<div class="access-control">
+					<div class="user-role form-group">
+						<label>Select User Role</label>
+						<select name="user-role">
+							<option>Select</option>
+							<option>Admin</option>
+							<option>Manager</option>
+							<option>Team Lead</option>
+							<option>Developer</option>
+							<option>User</option>
+						</select>
+					</div>
+					<div class="permission-list d-flex f-col">
+						<article class="access-permission">
+							<div class="d-flex">
+								<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+								<div class="perm-switch">
+				                    <label class="switch">
+				                        <input type="checkbox">
+				                        <span class="slider round"></span>
+				                    </label>
+				                </div>
+			                </div>
+		                </article>
+						<article class="access-permission">
+							<div class="d-flex">
+								<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+								<div class="perm-switch">
+				                    <span>No</span>
+				                    <label class="switch">
+				                        <input type="checkbox">
+				                        <span class="slider round"></span>
+				                    </label>
+				                    <span>Yes</span>
+				                </div>
+			                </div>
+		                </article>
+						<article class="access-permission">
+							<div class="d-flex">
+								<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+								<div class="perm-switch">
+				                    <span>No</span>
+				                    <label class="switch">
+				                        <input type="checkbox">
+				                        <span class="slider round"></span>
+				                    </label>
+				                    <span>Yes</span>
+				                </div>
+			                </div>
+			                <article class="access-permission sub-permission">
+								<div class="d-flex">
+									<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+									<div class="perm-switch">
+					                    <span>No</span>
+					                    <label class="switch">
+					                        <input type="checkbox">
+					                        <span class="slider round"></span>
+					                    </label>
+					                    <span>Yes</span>
+					                </div>
+				                </div>
+			                </article>
+			                <article class="access-permission sub-permission">
+								<div class="d-flex">
+									<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+									<div class="perm-switch">
+					                    <span>No</span>
+					                    <label class="switch">
+					                        <input type="checkbox">
+					                        <span class="slider round"></span>
+					                    </label>
+					                    <span>Yes</span>
+					                </div>
+				                </div>
+			                </article>
+		                </article>
+						<article class="access-permission">
+							<div class="d-flex">
+								<span class="perm-label">Access to Pages <i class="fas fa-chevron-down"></i></span>
+								<div class="perm-switch">
+				                    <span>No</span>
+				                    <label class="switch">
+				                        <input type="checkbox">
+				                        <span class="slider round"></span>
+				                    </label>
+				                    <span>Yes</span>
+				                </div>
+			                </div>
+		                </article>
+					</div>
+				</div>
+			</div>
+		-->
 		</main>
 	</body>
   
