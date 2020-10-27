@@ -1,5 +1,7 @@
 body{
 	margin: 0;
+	font-family: sans-serif;
+	font-size: 14px;
 }
 ul{
 	list-style: none;
@@ -17,40 +19,14 @@ ul{
 	position: relative;
 	margin: 0;
 	width: 80% !important;
-    left: 20% !important;
+    left: 10% !important;
     top: 62px;
     overflow-y: auto;
     transition: all 0.4s linear;
 }
 .te-container.stretched{
 	width: 90% !important;
-    left: 10% !important;
+    left: 5% !important;
 	transition: all 0.4s linear; 
-}
-.form-group{
-	width: 100%;
-	margin: 10px 0;
-	position: relative;
-}
-.d-flex .form-group{
-	width: 48%;
-
-}
-.form-group textarea{
-	width: 100%;
-}
-.d-flex .form-group select,
-.d-flex .form-group input{
-	width: 100%;
-}
-.cta-submit{
-	margin: 15px auto;
-	text-align: center;
-}
-.cta-submit input{
-	width: 40%;
-	margin: auto;
-	padding: 10px 5px;
-
 }
 
