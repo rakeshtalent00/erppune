@@ -26,15 +26,17 @@ $(document).ready(function() {
 /*
 ** Script for floating labels in forms 
 */
-	$("form input[type=text]").each(function() {
-		if ($("form input").val() != null || $("input").val() != ''){
-			$(this).addClass('shifted');
-		}
-	});
+	 $("form input[type=text]").each(function() {
+        if( $(this).val() == null || $(this).val() == "" ) {
+            $(this).removeClass('shifted');
+        } else
+            $(this).addClass('shifted');
+    });
 
 	$("input").change(function(){
   		var inpValue = $(this).val();
 	  	$(this).addClass('shifted');
+
 	  	if(inpValue == null || inpValue == '' || inpValue == ' ' || inpValue == '  ' ) {
   			$(this).val(null);
 	  		$(this).removeClass('shifted');
