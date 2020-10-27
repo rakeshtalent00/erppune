@@ -14,7 +14,7 @@ ul{
 	flex-direction: column;
 }
 .te-container{
-	position: fixed;
+	position: relative;
 	margin: 0;
 	width: 80% !important;
     left: 20% !important;
@@ -44,6 +44,7 @@ ul{
 	width: 100%;
 }
 .cta-submit{
+	margin: 15px auto;
 	text-align: center;
 }
 .cta-submit input{

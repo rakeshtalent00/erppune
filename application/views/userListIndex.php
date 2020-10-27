@@ -13,7 +13,7 @@ define("_ROOT",base_url());
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/custom-basic-styles.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
-		<script src="https://kit.fontawesome.com/9b792aadd6.js" crossorigin="anonymous"></script>
+		<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
     </head>
 	<style type="text/css">
 		body{
