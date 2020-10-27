@@ -16,6 +16,9 @@ class User extends CI_Controller{
 	function userList(){
 		//$data['universityList'] = $this->Usermgt->universitylist();
 		$data['userlist'] = $this->Usermgt->userlist();
+		$data['getCountries'] = $this->Usermgt->getCountries();
+		$data['getStates'] = $this->Usermgt->getStates();
+		$data['getCities'] = $this->Usermgt->getCities();
 		$this->load->view("userListIndex.php",$data);
 	}
 

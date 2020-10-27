@@ -74,6 +74,42 @@ define("_ROOT",base_url());
 <script>
 	$(document).on('click','#createuserbtn',function(e) {
 	e.preventDefault()
+
+	if(($("#firstName").val().trim().length==0))
+	{
+		alert("Please Insert First Name");
+		exit;
+	}else if(($("#lastName").val().trim().length==0))
+	{
+		alert("Please Insert Last Name");
+		exit;
+	}else if(($("#userEmail").val().trim().length==0))
+	{
+		alert("Please Insert Email");
+		exit;
+	}else if(($("#employeeCode").val().trim().length==0))
+	{
+		alert("Please Insert Employee Code");
+		exit;
+	}else if(($("#gender").val().trim().length==0))
+	{
+		alert("Please select gender");
+		exit;
+	}else if(($("#userName").val().trim().length==0))
+	{
+		alert("Please Insert User Name");
+		exit;
+	}else if(($("#password").val().trim().length==0))
+	{
+		alert('Please Insert Password');
+		exit;
+	}else if(checkPasswordMatch()==false){
+		alert('password Do Not Match');
+		exit;
+	}
+
+
+
     var formdata = new FormData(createuserform);
 	var url= "http://localhost/erppune/createuser";
     $.ajax({
@@ -101,7 +137,14 @@ define("_ROOT",base_url());
      });
 });
 
-
+function checkPasswordMatch(){
+	var password = $("#password").val();
+	var confirmPassword = $("#repassword").val();
+	if (password != confirmPassword)
+		return false;
+	else
+		return true;
+}
   
   $(document).ready(function() {
     $("#postalCode").keyup(function() {
@@ -112,7 +155,6 @@ define("_ROOT",base_url());
 			$("#country").val("");
 			var pincode = el.val();
 			var url =  "https://api.postalpincode.in/pincode/" + pincode ;
-			alert(url);
             $.ajax({
                 url: url,
                 cache: false,
@@ -131,8 +173,6 @@ define("_ROOT",base_url());
                     var city = data2.District;
                     var state = data2.State;
 					var country = data2.Country;
-
-					
 					
 					$('#country').find('option').each( function() {
 					var $this = $(this);
@@ -166,7 +206,6 @@ define("_ROOT",base_url());
     });
 });
   $(document).ready(function() {
-
   	$('header .hamburger-menu').click(function(){
 		$('.side-nav').toggleClass('squeezed');
 		$('.te-container').toggleClass('stretched');

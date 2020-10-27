@@ -112,13 +112,13 @@
 	            	<label class="floating-label">User Name <span class="required">*</span></label>
 	            </div>
 	            <div class="form-group">
-	                <input type="text" id = "password" name="password" />
+	                <input type="password" id = "password" name="password" />
 	                <label class="floating-label">Password<span class="required">*</span></label>
 	            </div>
-	            <!-- <div class="form-group">
+	            <div class="form-group">
 	                <label>Confirm Password<span class="required">*</span></label>
-	                <input type="text" id = "confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
-	            </div> -->
+	                <input type="password" id = "repassword" name="repassword" placeholder="Confirm Password" />
+	            </div>
 	        </div>
 	            
 
