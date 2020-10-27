@@ -24,10 +24,10 @@ define("_ROOT",base_url());
 			<div class="te-container">
 				<div class="users-view"> 
 					<div class="d-flex table-header">
+						<div class="sort-bar"></div>
 						<div class="search-bar">
 							<input type="text" name="userSearch" class="" placeholder="Search User" />
 						</div>
-						<div class="sort-bar"></div>
 					</div>
 					<table id="example" class="display" style="width:100%" cellspacing="5px">
 				        <thead>

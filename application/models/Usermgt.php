@@ -62,7 +62,7 @@ class Usermgt  extends CI_Model{
 	}
 
 	public function userlist(){
-		$res = $this->db->query("SELECT * FROM `users` where status = 0 and deleted =  0");
+		$res = $this->db->query("SELECT * FROM `users` where status = 1 and deleted =  0");
 		return $res;
 	}
 
@@ -78,7 +78,12 @@ class Usermgt  extends CI_Model{
 	}
 
 	public function getStates(){
-        $query=$this->db->get('countries');
+        $query=$this->db->get('states');
+        return $query->result();
+	}
+
+	public function getCities(){
+        $query=$this->db->get('cities');
         return $query->result();
 	}
 

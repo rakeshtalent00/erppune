@@ -20,6 +20,9 @@ class User extends CI_Controller{
 	}
 
 	function userform(){
+		$data['getCountries'] = $this->Usermgt->getCountries();
+		$data['getStates'] = $this->Usermgt->getStates();
+		$data['getCities'] = $this->Usermgt->getCities();
 		$data['universityList'] = $this->Usermgt->universitylist();
 		$data['userlist'] = $this->Usermgt->userlist();
 		$this->load->view("userIndex",$data);

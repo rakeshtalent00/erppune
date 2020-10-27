@@ -63,8 +63,12 @@ define("_ROOT",base_url());
         if (el.val().length === 6) {
         	$("#city").val("");
             $("#state").val("");
+			$("#country").val("");
+			var pincode = el.val();
+			var url =  "https://api.postalpincode.in/pincode/" + pincode ;
+			alert(url);
             $.ajax({
-                url: "https://api.postalpincode.in/pincode/122001",
+                url: url,
                 cache: false,
                 dataType: "json",
                 type: "GET",
@@ -74,8 +78,42 @@ define("_ROOT",base_url());
                 	var data1 = JSON.parse(data);
                 	var data2 = data1[0];
                 	console.log(data2);
-                    $("#city").val(data2.District);
-                    $("#state").val(data2.State);
+					// alert(data2.District);
+					$('#country').val("");
+					$('#state').val("");
+					$('#city').val("");
+                    var city = data2.District;
+                    var state = data2.State;
+					var country = data2.Country;
+
+					
+					
+					$('#country').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == country.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#state').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == state.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#city').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == city.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+					$("#country").selectmenu("refresh");
+					$('#state').change();
+					$('#city').change();
                 }
             });
         }
