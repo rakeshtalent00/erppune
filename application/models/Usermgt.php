@@ -78,7 +78,12 @@ class Usermgt  extends CI_Model{
 	}
 
 	public function getStates(){
-        $query=$this->db->get('countries');
+        $query=$this->db->get('states');
+        return $query->result();
+	}
+
+	public function getCities(){
+        $query=$this->db->get('cities');
         return $query->result();
 	}
 
