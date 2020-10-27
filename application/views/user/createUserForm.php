@@ -254,10 +254,9 @@
 	            <div class="form-group">
 	                <label>University</label>
 	                <select id="universityId" name="universityId" class="field-divided">
-	                	<option value="">Select Universityoooooo</option>
+	                	<option value="">Select University</option>
 						<?php
-						//echo "<pre>";print_r($data);die("okkk");
-						foreach($data  as $row)
+						foreach($data=$universityList->result_array() as $row)
 						{
 						echo "<option value='" .$row['id']."'>" .$row['universityName']."</option>";
 						}

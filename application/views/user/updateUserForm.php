@@ -127,8 +127,8 @@
 	            	<label>Gender <span class="required">*</span></label>
 	                <select id = "gender" name="gender" class="field-divided">
 	                <option value="">Select Gender</option>
-	                <option value="Male">Male</option>
-	                <option value="Female">Female</option>
+	                <option value="Male" <?php ($getUserData[0]->gender == "Male") ? ' selected="selected"' : ''?>>Male</option>
+	                <option value="Female" <?php ($getUserData[0]->gender == "Female") ? ' selected="selected"' : ''?>>Female</option>
 	              </select>
 	            </div>
 	            <div class="form-group">    
@@ -197,15 +197,15 @@
 
             <div class="d-flex">
 	            <div class="form-group">
-	                <input id="education" type="text" name="education" />
+	                <input id="education" type="text" name="education" value= "<?php echo $getUserData[0]->education ?>"/>
 	                <label class="floating-label">Education</label>
 	            </div>
 	            <div class="form-group">
 	                <label>Status<span class="required">*</span></label>
 	                <select id="status" name="status" class="field-divided">
 		                <option value="">Select Status</option>
-		                <option value="Partnership">Active</option>
-		                <option value="General Question">Inactive</option>
+		                <option value="1">Active</option>
+		                <option value="0">Inactive</option>
 	                </select> 
 	            </div>
             </div>
@@ -256,11 +256,10 @@
 	                	<option value="">Select University</option>
 						<?php
 						foreach($data=$universityList->result_array() as $row)
-						{
-						echo "<option value='" .$row['id']."'>" .$row['universityName']."</option>";
-						}
+						{ ?>
+						<option value="<?php echo $row['id'];?>" <?php echo ($row['id'] ==  $getUserData[0]->universityId) ? ' selected="selected"' : '';?>><?php echo $row['universityName']; ?></option>
+						<?php }
 						?>
-						
 	                </select> 
 	            </div>
 

@@ -127,9 +127,9 @@ define("_ROOT",base_url());
 				<?php foreach($data=$userlist->result_array() as $row){ ?>	
 		        	<tr>
 		                <td><?php echo $row['firstName']; ?></td>
-		                <td><?php echo $row['userName']; ?></td>
-		                <td><?php echo $row['userName']; ?></td>
-		                <td><?php echo $row['userName']; ?></td>
+		                <td><?php echo $row['lastName']; ?></td>
+		                <td><?php echo $row['userEmail']; ?></td>
+		                <td><?php echo $row['employeeCode']; ?></td>
 		                <td><a id="editData" href="<?php echo _ROOT; ?>User/updateUserForm/<?php echo $row['id']; ?>"><span class='cta-edit-user'>Edit</a></td>
 		            </tr>
 		            <tr class="user-details"> 
@@ -138,22 +138,25 @@ define("_ROOT",base_url());
 								<div class="d-flex">
 									<input type='text' style='display:none' id='dataId' value='<?php echo $row['id']; ?>'>
 									<p>User Name: <span><?php echo $row['userName']; ?></span></p>
-									<p>Gender: <span><?php echo $row['userName']; ?></span></p>
-									<p>Date of Birth: <span><?php echo $row['userName']; ?></span></p>
-									<p>Mobile: <span><?php echo $row['userName']; ?></span></p>
-									<p>Mobile Work: <span><?php echo $row['userName']; ?></span></p>
-									<p>Street: <span><?php echo $row['userName']; ?></span></p>
-									<p>Postal Code: <span><?php echo $row['userName']; ?></span></p>
-									<p>City: <span><?php echo $row['userName']; ?></span></p>
-									<p>State: <span><?php echo $row['userName']; ?></span></p>
-									<p>Country: <span><?php echo $row['userName']; ?></span></p>
-									<p>Education: <span><?php echo $row['userName']; ?></span></p>
-									<p>Manager: <span><?php echo $row['userName']; ?></span></p>
-									<p>Designation: <span><?php echo $row['userName']; ?></span></p>
-									<p>Media: <span><?php echo $row['userName']; ?></span></p>
-									<p>Campaign: <span><?php echo $row['userName']; ?></span></p>
-									<p>University: <span><?php echo $row['userName']; ?></span></p>
-									<p>Department: <span><?php echo $row['userName']; ?></span></p>
+									<p>Gender: <span><?php echo $row['gender']; ?></span></p>
+									<p>Date of Birth: <span><?php echo $row['dateOfBirth']; ?></span></p>
+									<p>Mobile: <span><?php echo $row['mobile']; ?></span></p>
+									<p>Mobile Work: <span><?php echo $row['mobileWork']; ?></span></p>
+									<p>Street: <span><?php echo $row['addressStreet']; ?></span></p>
+									<p>Postal Code: <span><?php echo $row['postalCode']; ?></span></p>
+									<p>City: <span><?php echo $row['city']; ?></span></p>
+									<p>State: <span><?php echo $row['state']; ?></span></p>
+									<p>Country: <span><?php echo $row['country']; ?></span></p>
+									<p>Education: <span><?php echo $row['education']; ?></span></p>
+									<p>Status: <span><?php echo $row['status']; ?></span></p>
+									<p>Manager: <span><?php echo $row['reportsTo']; ?></span></p>
+									<p>Designation: <span><?php echo $row['designation']; ?></span></p>
+									<p>Media: <span><?php echo $row['media']; ?></span></p>
+									<p>Campaign: <span><?php echo $row['campaign']; ?></span></p>
+									<p>University: <span><?php echo $row['universityId']; ?></span></p>
+									<p>Department: <span><?php echo $row['departmentId']; ?></span></p>
+									<p>External Access: <span><?php echo $row['externalAccess']; ?></span></p>
+									<!-- <p>User Role: <span><?php echo $row['roleId']; ?></span></p> -->
 								</div>
 							</div>
 						</td>
