@@ -9,47 +9,12 @@ define("_ROOT",base_url());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-upload-style.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/custom-basic-styles.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
-
-	<style type="text/css">
-		.d-flex{
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: flex-end;
-		}
-		.form-group{
-			width: 100%;
-			margin: 10px 0;
-			position: relative;
-		}
-		.d-flex .form-group{
-			width: 48%;
-
-		}
-        .form-group textarea{
-            width: 100%;
-        }
-		.d-flex .form-group select,
-		.d-flex .form-group input{
-			width: 100%;
-		}
-		.cta-submit{
-			text-align: center;
-		}
-		.cta-submit input{
-			width: 40%;
-			margin: auto;
-			padding: 10px 5px;
-
-		}
-		}
-        
-	</style>
+	<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
+	<script src="<?php  echo _ROOT; ?>assets/scripts/jquery.min.js"></script>
 </head>
 <body>
 <?php require_once("header/header.php"); ?>

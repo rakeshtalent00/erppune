@@ -1,6 +1,9 @@
 /*
-** Styles For Add User Page
+** Styles For Form Page
 */
+form > .d-flex{
+    align-items: flex-end;
+}
 
 #userPhoto{
 	width: 180px;

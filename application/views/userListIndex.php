@@ -8,139 +8,15 @@ define("_ROOT",base_url());
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="<?php  echo _ROOT; ?>assets/scripts/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-upload-style.css"/>
+		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-list-view.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/custom-basic-styles.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
 		<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
     </head>
-	<style type="text/css">
-		body{
-			background: #c5c5c5;
-		}
-		
-		.users-view{
-			padding: 10px;
-			background: #fff; 
-		}
-		.user-details{
-			display: none;
-		}
-		.user-detail{
-			padding: 5px;
-			/*padding: 0 10px 10px 10px;*/
-			background: #4f6dac;
-			border-radius: 5px;
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-		}
-		.user-preview{
-			padding: 0 10px;
-			justify-content: space-between;
-			background: #fff;
-			box-shadow: 0px 0px 3px 0px #0C8FBE;
-			border-radius: 5px;
-			border-bottom-left-radius: 0px;
-			border-bottom-right-radius: 0px;
-			cursor: pointer;
-			color: #000;
-		}
-		.user-preview p{
-			margin: 5px 0; 
-		}
-		.cta-edit-user{
-			font-size: 13px;
-		}
-		.user-preview .cta-edit-user a{
-			text-align: center;
-			text-decoration: underline;
-			color: #244895;
-			z-index: 999;
-		}
-		.user-detail .d-flex {
-			justify-content: flex-start;
-			padding: 10px;
-			background: #fff;
-			border-radius: 5px;
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-
-		}
-		.user-details .d-flex p{
-			margin: 10px;
-		}
-		.user-details p span{
-			color: #0C8FBE;
-		}
-
-		.user.active .user-preview{
-			background: #0C8FBE;
-			color: #fff;
-		}
-
-		.dataTables_length select {
-		    background-color: #fff !important;
-		}
-		#example_wrapper{
-			padding: 10px 0;
-		    background: #c5c5c5;
-	        border: 1px solid;
-	        font-size: 13px !important;
-		}
-		#example_filter{
-			margin-bottom: 20px;
-		}
-		.table-header{
-			justify-content: flex-start;
-			margin-bottom: 10px;
-		}
-		.table-header .search-bar input{
-			border : none;
-			border-bottom: 1px solid #244895;
-		}
-		.table-header .search-bar input:focus{
-			outline: none;
-			border-bottom-color: #c5c5c5;
-		}
-		thead{
-			background: #244895;
-			color: #fff;
-		}
-		tbody tr:nth-child(odd) {
-			cursor: pointer;
-		}
-		tbody td{
-			padding-left: 5px;
-		}
-		#example_filter input[type="search"] {
-		    background: #fff;
-		}
-		tbody tr:nth-child(4n+1){
-			background: #e0e0e0;  
-		}
-		.pagination {
-			margin-top: 20px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.pagination a {
-			text-decoration: none;
-			color: #000;
-			border-right: 1px solid #000;
-			padding: 0px 5px; 
-		}
-		.pagination a:last-child {
-			border-right: none;
-		}
-		.pagination a.active {
-		  background-color: #88D5E9;
-		  color: #fff;
-		}
-
-		.pagination a:hover:not(.active) {background-color: #88D5E9; color: #fff;}
-	</style>
+	
 	<body>
 		<?php require_once("header/header.php"); ?>
 		<main class="d-flex">
