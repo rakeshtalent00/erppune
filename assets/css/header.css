@@ -42,16 +42,17 @@ header li.d-flex{
 .header-right ul{
 	display: none;
 	position: absolute;
-    background: gray;
+    background: #88d5e9;
     margin: 0;
     width: 100%;
     padding: 0;
+    top: 100%;
 }
 .header-right ul li{
 	padding: 8px 0;
     padding-left: 10px;
 	border-bottom: 1px solid;
-	color: #000;
+	color: #244895;
 	cursor: pointer;
 }
 

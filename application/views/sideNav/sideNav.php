@@ -1,6 +1,4 @@
 
-		<script src="https://kit.fontawesome.com/9b792aadd6.js" crossorigin="anonymous"></script>
-
 		<nav class="side-nav">
 			<div class="container">
 				<ul class="menu d-flex f-col">
