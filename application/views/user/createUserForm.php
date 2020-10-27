@@ -1,5 +1,5 @@
 <div class="te-container">
-<article class="form-style-1">
+	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
     		<h2>User Management</h2>
     		<!-- <div class="form-group">
@@ -76,7 +76,7 @@
 	            	<label class="floating-label">Mobile Work<span class="required">*</span></label>
 	            </div>
             </div>
-		<!-- <div class="form-group">
+			<!-- <div class="form-group">
 	                <label>Address<span class="required">*</span></label>
 	                <textarea  id = "address" name="address" class="field-divided"></textarea>
 	            </div> -->
@@ -93,18 +93,17 @@
 	        </div>
 			
             <div class="d-flex">
-
-			<div class="form-group">
-            	<label>Country</label>
-                <select id="country" name="country" class="field-divided">
-				<option value="">Select Country</option>
-					<?php
-					foreach ($getCountries as $row){
-					?>
-	                <option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
-	                <?php } ?>
-                </select> 
-            </div>
+				<div class="form-group">
+	            	<label>Country</label>
+	                <select id="country" name="country" class="field-divided">
+					<option value="">Select Country</option>
+						<?php
+						foreach ($getCountries as $row){
+						?>
+		                <option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
+		                <?php } ?>
+	                </select> 
+	            </div>
 	            <div class="form-group">
 	                <select id="state" name="state" class="field-divided">
 	                    <option value="">Select State</option>
@@ -118,18 +117,19 @@
 	                <label class="floating-label">State</label>
 	            </div>
 	        </div>
+
 	        <div class="form-group">
-	                <select id="city" name="city" class="field-divided">
-	                <option value="">Select City</option>
-					<?php
-					foreach ($getCities as $row){
-					?>	
-	                <option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
-					<?php } ?>
-	                </select> 
-	                <!-- <input type="text" id = "city" name="city" /> -->
-	                <label class="floating-label">City</label> 
-	            </div>
+                <select id="city" name="city" class="field-divided">
+                <option value="">Select City</option>
+				<?php
+				foreach ($getCities as $row){
+				?>	
+                <option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
+				<?php } ?>
+                </select> 
+                <!-- <input type="text" id = "city" name="city" /> -->
+                <label class="floating-label">City</label> 
+            </div>
 
     		<h2>Other Information</h2>
 
@@ -190,7 +190,8 @@
 	                </select>
 	            </div>
             </div>
-	    <div class="d-flex">
+
+	    	<div class="d-flex">
 	            <div class="form-group">
 	                <label>University</label>
 	                <select id="universityId" name="universityId" class="field-divided">
@@ -230,9 +231,9 @@
 	                </select>
 	            </div>
 			</div>
-            </div>
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
         </form>
-    </article>
+	</article>
+</div>

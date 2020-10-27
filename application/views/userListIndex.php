@@ -15,6 +15,7 @@ define("_ROOT",base_url());
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
 		<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
+		<script src="<?php  echo _ROOT; ?>assets/scripts/custom-common.js"></script>
     </head>
 	
 	<body>
@@ -108,11 +109,6 @@ define("_ROOT",base_url());
 				$(this).addClass('active');
 				$('.user-details').slideUp();
 				$(this).find('.user-details').slideDown();
-			});
-
-			$('header .hamburger-menu').click(function(){
-				$('.side-nav').toggleClass('squeezed');
-				$('.te-container').toggleClass('stretched');
 			});
 
 			$('tr').click(function(){

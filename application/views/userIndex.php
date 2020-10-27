@@ -17,6 +17,8 @@ define("_ROOT",base_url());
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/sideNav.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
 	<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
+    <script src="<?php  echo _ROOT; ?>assets/scripts/custom-common.js"></script>
+
 </head>
 <body>
 <?php require_once("header/header.php"); ?>
@@ -119,25 +121,6 @@ define("_ROOT",base_url());
         }
     });
 });
-  $(document).ready(function() {
-
-  	$('header .hamburger-menu').click(function(){
-		$('.side-nav').toggleClass('squeezed');
-		$('.te-container').toggleClass('stretched');
-	});
-
-
-	if ($("input").val() != null || $("input").val() != ''){
-		$(this).addClass('shifted');
-	}
-	$("input").change(function(){
-  		var inpValue = $(this).val();
-	  	$(this).addClass('shifted');
-	  	if(inpValue == null || inpValue == '' || inpValue == ' ' || inpValue == '  ' ) {
-  			$(this).val(null);
-	  		$(this).removeClass('shifted');
-	  	}	
-	});
-  });
+  
 </script>
 </html>

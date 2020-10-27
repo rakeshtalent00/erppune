@@ -15,6 +15,7 @@ define("_ROOT",base_url());
 	<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/header.css"/>
 	<script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>
 	<script src="<?php  echo _ROOT; ?>assets/scripts/jquery.min.js"></script>
+    <script src="<?php  echo _ROOT; ?>assets/scripts/custom-common.js"></script>
 </head>
 <body>
 <?php require_once("header/header.php"); ?>
@@ -75,15 +76,5 @@ define("_ROOT",base_url());
         }
     });
 });
-  $(document).ready(function() {
-  	$("input").change(function(){
-	  	let inpValue = $(this).val();
-	  	$(this).addClass('shifted');
-	  	if(inpValue == null || inpValue == '' || inpValue == ' ' || inpValue == '  ' ) {
-  			$(this).val(null);
-	  		$(this).removeClass('shifted');
-	  	}	
-	});
-  });
 </script>
 </html>

@@ -31,14 +31,5 @@
 		</nav>
 	
 	<script>
-		$(document).ready(function(){
-			$('.side-nav li .submenu').parent().addClass('has-submenu');
-
-			$('.side-nav li').click(function(){
-				$('.side-nav li').removeClass('active');
-				$(this).addClass('active');
-				$('.submenu').slideUp();
-				$(this).find('.submenu').slideDown();
-			});
-		});
+		
 	</script>

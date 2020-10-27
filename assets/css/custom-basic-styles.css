@@ -29,33 +29,4 @@ ul{
     left: 5% !important;
 	transition: all 0.4s linear; 
 }
-.form-group{
-	width: 100%;
-	margin: 10px 0;
-	position: relative;
-}
-form .d-flex {
-	justify-content: space-between;
-}
-.d-flex .form-group{
-	width: 48%;
-
-}
-.form-group textarea{
-	width: 100%;
-}
-.d-flex .form-group select,
-.d-flex .form-group input{
-	width: 100%;
-}
-.cta-submit{
-	margin: 15px auto;
-	text-align: center;
-}
-.cta-submit input{
-	width: 40%;
-	margin: auto;
-	padding: 10px 5px;
-
-}
 

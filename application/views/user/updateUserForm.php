@@ -1,6 +1,3 @@
-<style>
-	
-</style>
 <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
@@ -218,7 +215,6 @@
 	                </select>
 	            </div>
 			</div>
-            </div>
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
