@@ -42,6 +42,7 @@ define("_ROOT",base_url());
 			width: 100%;
 		}
 		.cta-submit{
+			margin: 15px auto;
 			text-align: center;
 		}
 		.cta-submit input{

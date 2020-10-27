@@ -141,6 +141,7 @@ select{
     .form-style-1 .required{
         color:red;
     }
+    
 </style>
 <div class="te-container">
 <article class="form-style-1">
