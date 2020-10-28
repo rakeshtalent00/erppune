@@ -30,7 +30,6 @@
 	            	<input type="text" id = "employeeCode" name="employeeCode" value= "<?php echo $getUserData[0]->employeeCode ?>"/>
 	            	<label class="floating-label">Employee Code<span class="required">*</span></label>
 	            </div>
-	            
             </div>
 
             <div class="d-flex">
@@ -39,6 +38,7 @@
 	            	<label class="floating-label">User Name <span class="required">*</span></label>
 	            </div>
 	            <div class="form-group">
+	            	<i class="far fa-eye"></i>
 	                <input type="text" id = "password" name="password" />
 	                <label class="floating-label">Password<span class="required">*</span></label>
 	            </div>

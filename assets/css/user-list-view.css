@@ -2,8 +2,15 @@
 body{
 	background: #c5c5c5;
 }
-.table-header{
+.table-header.d-flex{
 	justify-content: space-between;
+}
+.table-header .sort-bar p{
+	margin: 0 10px 0 0; 
+}
+.table-header .sort-bar input{
+	border: none;
+	border-bottom: 1px solid #244895;
 }
 .users-view{
 	padding: 10px;
@@ -105,7 +112,7 @@ tbody tr:nth-child(4n+1){
 	background: #e0e0e0;  
 }
 .pagination {
-	margin-top: 20px;
+	margin-top: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

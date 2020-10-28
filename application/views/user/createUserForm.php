@@ -39,6 +39,7 @@
 	            	<label class="floating-label">User Name <span class="required">*</span></label>
 	            </div>
 	            <div class="form-group">
+	                <i class="far fa-eye"></i>
 	                <input type="password" id = "password" name="password" />
 	                <label class="floating-label">Password<span class="required">*</span></label>
 	            </div>
@@ -105,6 +106,7 @@
 	                </select> 
 	            </div>
 	            <div class="form-group">
+	                <label>State</label>
 	                <select id="state" name="state" class="field-divided">
 	                    <option value="">Select State</option>
 						<?php
@@ -114,11 +116,11 @@
 						<?php } ?>
 	                    </select> 
 	                    <!-- <input type="text" id = "state" name="state" /> -->
-	                <label class="floating-label">State</label>
 	            </div>
 	        </div>
 
 	        <div class="form-group">
+                <label>City</label> 
                 <select id="city" name="city" class="field-divided">
                 <option value="">Select City</option>
 				<?php
@@ -128,7 +130,6 @@
 				<?php } ?>
                 </select> 
                 <!-- <input type="text" id = "city" name="city" /> -->
-                <label class="floating-label">City</label> 
             </div>
 
     		<h2>Other Information</h2>

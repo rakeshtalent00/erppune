@@ -58,7 +58,7 @@ define("_ROOT",base_url());
 
 
   
-  $(document).ready(function() {
+$(document).ready(function() {
     $("#postalCode").keyup(function() {
         var el = $(this);
         if (el.val().length === 6) {
