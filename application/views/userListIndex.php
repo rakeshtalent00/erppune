@@ -63,9 +63,28 @@ define("_ROOT",base_url());
 									<p>Mobile Work: <span><?php echo $row['mobileWork']; ?></span></p>
 									<p>Street: <span><?php echo $row['addressStreet']; ?></span></p>
 									<p>Postal Code: <span><?php echo $row['postalCode']; ?></span></p>
-									<p>City: <span><?php echo $row['city']; ?></span></p>
-									<p>State: <span><?php echo $row['state']; ?></span></p>
-									<p>Country: <span><?php echo $row['country']; ?></span></p>
+
+									<?php foreach($getCountries as $rowData){
+									if ($rowData->id == $row['country']){ ?>
+										<p>Country: <span><?php echo $rowData->name; ?></span></p>
+									<?php }} ?>
+
+									<?php foreach($getStates as $rowData){
+									if ($rowData->id == $row['state']){ ?>
+										<p>State: <span><?php echo $rowData->name; ?></span></p>
+									<?php }} ?>
+
+									<?php foreach($getCities as $rowData){
+									if ($rowData->id == $row['city']){ ?>
+										<p>City: <span><?php echo $rowData->name; ?></span></p>
+									<?php }} ?>
+												
+									
+									
+									<!-- <p>State: <span><?php echo $row['state']; ?></span></p>
+									<p>City: <span><?php echo $row['city']; ?></span></p> -->
+
+
 									<p>Education: <span><?php echo $row['education']; ?></span></p>
 									<p>Status: <span><?php echo $row['status']; ?></span></p>
 									<p>Manager: <span><?php echo $row['reportsTo']; ?></span></p>
