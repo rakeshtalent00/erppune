@@ -153,11 +153,14 @@ define("_ROOT",base_url());
 					overflow-x: auto;
 					margin-bottom: 20px;
 				}
-				.access-table{
-				  border-collapse: separate;
-				  border-spacing: 0px 5px;
+				.access-table,
+				.access-table table{
+				  border-collapse: collapse !important;
 				}
-				.access-table tbody tr {
+				.access-table tbody tr:last-child td{
+				    border-bottom: none;
+				}
+				.access-table tbody tr td{
 				    border-bottom: 1px solid #244895;
 				}
 				.access-table td{
@@ -190,21 +193,23 @@ define("_ROOT",base_url());
 				    font-size: 14px;
 				    font-family: FontAwesome;
 				    color: #244895;
-				    transform: rotate(-90deg);
+				    transform: rotate(0deg);
 				    transition: 0.3s linear;
 				}
 				.access-table .has-submenu.clicked td:first-child:before {
-				    transform: rotate(0deg);
+				    transform: rotate(-90deg);
 				    transition: 0.3s linear;
 				}
 				.access-table .sub-access {
 					display: none;
+					border-top: 2px solid #244895;
+					border-bottom: 2px solid #244895;
 				}
 				.access-table .sub-access > td {
 					padding-left: 0;
 				}
 				.access-table .sub-access table td:first-child {
-					border-left: 30px solid #fff;
+					border-left: 10px solid #fff;
 				}
 				.access-table .sub-access table {
 					width: 100%;
@@ -224,6 +229,23 @@ define("_ROOT",base_url());
 					position: relative;
 					left: 90%;
 				}
+				.expand-ctas{
+					justify-content: flex-start;
+					margin: 5px 0;
+				}
+				.expand-ctas span{
+					margin: 0 5px;
+				}
+				.expand-access,
+				.collapse-access{
+					text-decoration: underline;
+					display: block;
+					font-size: 12px;
+					line-height: 18px;
+					color: #244895;
+					cursor: pointer;
+
+				}
 			</style>
 			<div class="te-container">
 				<div class="access-control">
@@ -240,6 +262,11 @@ define("_ROOT",base_url());
 					</div>
 
 					<section class="user-table">
+						<p class="d-flex expand-ctas">
+							<span class="expand-access">Expand All</span>
+							<span>/</span>
+							<span class="collapse-access">Collapse All</span>
+						</p>
 					<div class="responsive-table">
 						<table class="access-table" id="access-table">
 							<thead>
@@ -417,6 +444,10 @@ define("_ROOT",base_url());
 						</table>
 					</div>
 					<input type="submit" value="Submit" class="submit-cta"/>
+
+					<script>
+						$("")
+					</script>
 				</section>
 
 
@@ -519,6 +550,14 @@ define("_ROOT",base_url());
 			$('tr').click(function(){
 				console.log($(this).parent().parent());
 				$(this).next('.user-details').slideToggle();
+			});
+
+
+			$('.expand-access').click(function(){
+				$('.sub-access').slideDown();
+			});
+			$('.collapse-access').click(function(){
+				$('.sub-access').slideUp();
 			});
 
 			$('.sub-access').prev('tr').addClass('has-submenu');
