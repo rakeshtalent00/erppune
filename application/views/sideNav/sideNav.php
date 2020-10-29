@@ -1,6 +1,16 @@
 
 		<nav class="side-nav">
 			<div class="container">
+				<div class="menu-profile mob-only">
+				<ul class="d-flex f-col">
+					<li><img class="user-image" src="<?php  echo _ROOT; ?>assets/images/user.png"></li>
+					<li>User Name</li>
+					<li>User Role</li>
+					<li>Settings</li>
+					<li>Logout</li>
+				</ul>
+					
+				</div>
 				<ul class="menu d-flex f-col">
 					<li>
 						<i class="fas fa-users"></i>User Management
