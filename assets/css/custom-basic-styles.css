@@ -15,6 +15,8 @@ ul{
 .f-col{
 	flex-direction: column;
 }
+.mob-only{display: none;}
+.desk-only{display: block;}
 .te-container{
 	position: relative;
 	margin: 0;
@@ -25,7 +27,7 @@ ul{
     transition: all 0.4s linear;
 }
 .te-container.stretched{
-	width: 90% !important;
+	width: 88% !important;
     left: 5% !important;
 	transition: all 0.4s linear; 
 }
@@ -74,7 +76,7 @@ ul{
 			width: 75%;
 		}
         .perm-switch {
-            text-align: right;
+            text-align: center;
         }
         .perm-switch span {
             color: #244895;
@@ -84,8 +86,8 @@ ul{
         .switch {
             position: relative;
             display: inline-block;
-            width: 46px;
-            height: 18px;
+            width: 40px;
+            height: 15px;
         }
 
         /* Change default HTML checkbox */
@@ -111,10 +113,10 @@ ul{
         .slider:before {
             position: absolute;
             content: "";
-            height: 14px;
-            width: 14px;
-            left: 4px;
-            bottom: 2px;
+            height: 13px;
+            width: 13px;
+            left: 1px;
+    		bottom: 1px;
             background-color: #244895;
             -webkit-transition: .4s;
             transition: .4s;
@@ -142,5 +144,29 @@ ul{
             border-radius: 50%;
         }
 /*
-** Style for access control switch ends
+** Style for responsiveness
 */
+.responsive-table{
+	width: 100%;
+    overflow-x: auto;
+}
+@media screen and (max-width: 768px){
+    .te-container.stretched{
+	    width: 88% !important;
+	    left: 6% !important;
+	    transition: all 0.4s linear;
+	}
+}
+@media screen and (max-width: 767px){
+    .te-container{
+    	left: 0 !important; 
+        width: 100% !important;
+        transition: 0.4s linear;
+    }
+    .te-container.stretched{
+    	transform: translateX(30%);
+        transition: 0.4s linear;
+    }
+	.mob-only{display: block;}
+	.desk-only{display: none;}
+}

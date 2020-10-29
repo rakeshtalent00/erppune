@@ -99,7 +99,7 @@ thead{
 	background: #244895;
 	color: #fff;
 }
-tbody tr:nth-child(odd) {
+#example tbody tr:nth-child(odd) {
 	cursor: pointer;
 }
 tbody td{
