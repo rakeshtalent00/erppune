@@ -8,7 +8,7 @@
     transition: width 0.4s linear;
 }
 .side-nav.squeezed{
-    width: 10%;
+    width: 12%;
     transition: 0.4s linear;
 }
 
@@ -31,7 +31,7 @@
 }
 .side-nav ul li{
     position: relative;
-    width: 100%;
+    width: 90%;
     padding: 10px; 
     margin-bottom: 0;
     border-bottom: 1px solid;
@@ -85,4 +85,30 @@
     display: block;
     font-size: 20px;
     margin-bottom: 5px;
+}
+
+.side-nav .menu-profile{
+    background: #444895;
+    width: 100%;    
+    border-bottom: 1px solid #fff;
+}
+.side-nav .menu-profile li{
+    padding: 7px 10px; 
+    border-bottom: 0;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px){
+    .side-nav{
+        transform: translateX(-100%);
+        transition: 0.4s linear;
+    }
+    .side-nav.squeezed{
+        transform: translateX(0);
+        width: 30% !important;
+        transition: 0.4s linear;
+    }
+    .side-nav li i{
+        display: block;
+    }
 }
