@@ -16,15 +16,28 @@
 						<li><a href="<?php  echo _ROOT; ?>roleList"><i class="fas fa-users-cog"></i>Role List</a></li>
 						</ul>
 					</li>
-					<li><i class="fas fa-home"></i>Lorem</li>
-					<li><i class="fas fa-home"></i>Lorem</li>
 					<li>
-						<i class="fas fa-home"></i>Lorem
+						<i class="fas fa-users-cog"></i>Department Management
 						<ul class="submenu">
-							<li><i class="fas fa-home"></i>Ipsum</li>
-							<li><i class="fas fa-home"></i>Ipsum</li>
+						<li><a href="<?php  echo _ROOT; ?>Department"><i class="fas fa-user-cog"></i>Create Department</a></li>
+						<li><a href="<?php  echo _ROOT; ?>departmentList"><i class="fas fa-users-cog"></i>Department List</a></li>
 						</ul>
 					</li>
+					<li>
+						<i class="fas fa-users-cog"></i>Module Management
+						<ul class="submenu">
+						<li><a href="<?php  echo _ROOT; ?>Module"><i class="fas fa-user-cog"></i>Create Module</a></li>
+						<li><a href="<?php  echo _ROOT; ?>moduleList"><i class="fas fa-users-cog"></i>Module List</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<i class="fas fa-users-cog"></i>Sub Module Management
+						<ul class="submenu">
+						<li><a href="<?php  echo _ROOT; ?>subModule"><i class="fas fa-user-cog"></i>Create Sub Module</a></li>
+						<li><a href="<?php  echo _ROOT; ?>subModuleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
+						</ul>
+					</li>					
 					<li><i class="fas fa-home"></i>Lorem</li>
 				</ul>
 			</div>

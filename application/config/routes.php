@@ -49,10 +49,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['Department'] = 'Department';
+$route['createDepartment'] = 'Department/createDepartment';
+$route['departmentList'] = 'Department/departmentList';
+$route['updateDepartment'] = 'Department/updateDepartment';
+
+
+$route['Module'] = 'Module';
+$route['createModule'] = 'Module/createModule';
+$route['moduleList'] = 'Module/moduleList';
+$route['updateModule'] = 'Module/updateModule';
+
+$route['subModule'] = 'SubModule';
+$route['createsubModule'] = 'SubModule/createsubModule';
+$route['submoduleList'] = 'SubModule/submoduleList';
+$route['updatesubModule'] = 'SubModule/updatesubModule';
+
+
+
+$route['roleList'] = 'User/roleList';
 $route['userList'] = 'User/userList';
 $route['roleForm'] = 'User/roleForm';
 $route['createuser'] = 'User/createuser';
+$route['updateuser'] = 'User/updateuser';
 $route['createRole'] = 'User/createRole';
+$route['updateRole'] = 'User/updateRole';
 $route['userform'] = 'User/userform';
 $route['updateUserForm'] = 'User/updateUserForm';
 $route['default_controller'] = 'User/userform';

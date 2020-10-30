@@ -39,7 +39,6 @@
 	            	<label class="floating-label">User Name <span class="required">*</span></label>
 	            </div>
 	            <div class="form-group">
-	                <i class="far fa-eye"></i>
 	                <input type="password" id = "password" name="password" />
 	                <label class="floating-label">Password<span class="required">*</span></label>
 	            </div>
@@ -106,7 +105,6 @@
 	                </select> 
 	            </div>
 	            <div class="form-group">
-	                <label>State</label>
 	                <select id="state" name="state" class="field-divided">
 	                    <option value="">Select State</option>
 						<?php
@@ -116,11 +114,11 @@
 						<?php } ?>
 	                    </select> 
 	                    <!-- <input type="text" id = "state" name="state" /> -->
+	                <label class="floating-label">State</label>
 	            </div>
 	        </div>
 
 	        <div class="form-group">
-                <label>City</label> 
                 <select id="city" name="city" class="field-divided">
                 <option value="">Select City</option>
 				<?php
@@ -130,6 +128,7 @@
 				<?php } ?>
                 </select> 
                 <!-- <input type="text" id = "city" name="city" /> -->
+                <label class="floating-label">City</label> 
             </div>
 
     		<h2>Other Information</h2>
@@ -195,7 +194,7 @@
 	    	<div class="d-flex">
 	            <div class="form-group">
 	                <label>University</label>
-	                <select id="universityId" name="universityId" class="field-divided">
+	                <select id="universityId" name="universityId[]" class="field-divided" multiple>
 	                	<option value="">Select University</option>
 						<?php
 						foreach($data=$universityList->result_array() as $row)
@@ -227,8 +226,9 @@
 	                <label>User Role</label>
 	                <select id="roleId" name="roleId" class="field-divided">
 	                    <option value="">Select Role</option>
-	                    <option value="1">Role1</option>
-	                    <option value="2">Role2</option>
+	                    <?php foreach ($getRoles as $row){ ?>	
+							<option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
+							<?php } ?>
 	                </select>
 	            </div>
 			</div>
@@ -238,3 +238,134 @@
         </form>
 	</article>
 </div>
+<script>
+$(document).on('click','#createuserbtn',function(e) {
+	e.preventDefault()
+
+	if(($("#firstName").val().trim().length==0))
+	{
+		alert("Please Insert First Name");
+		exit;
+	}else if(($("#lastName").val().trim().length==0))
+	{
+		alert("Please Insert Last Name");
+		exit;
+	}else if(($("#userEmail").val().trim().length==0))
+	{
+		alert("Please Insert Email");
+		exit;
+	}else if(($("#employeeCode").val().trim().length==0))
+	{
+		alert("Please Insert Employee Code");
+		exit;
+	}else if(($("#gender").val().trim().length==0))
+	{
+		alert("Please select gender");
+		exit;
+	}else if(($("#userName").val().trim().length==0))
+	{
+		alert("Please Insert User Name");
+		exit;
+	}else if(($("#password").val().trim().length==0))
+	{
+		alert('Please Insert Password');
+		exit;
+	}else if(checkPasswordMatch()==false){
+		alert('password Do Not Match');
+		exit;
+	}
+
+
+
+    var formdata = new FormData(createuserform);
+	var url= "<?php echo _ROOT; ?>createuser";
+    $.ajax({
+		 url: url, 
+		 //dataType: "text",
+		 cache: false,
+		 contentType: false,
+		 processData: false,
+		 data: formdata,                         
+		 type: "POST",
+		 success: function(data){
+			 console.log("Okkk" + data);
+			 var res=JSON.parse(data);
+			 if(res.success==true){
+				alert("User Created");
+                location.reload();			
+			 }	 
+			 else
+				 alert(res.error);
+		}
+     });
+});
+
+function checkPasswordMatch(){
+	var password = $("#password").val();
+	var confirmPassword = $("#repassword").val();
+	if (password != confirmPassword)
+		return false;
+	else
+		return true;
+}
+  
+  $(document).ready(function() {
+    $("#postalCode").keyup(function() {
+        var el = $(this);
+        if (el.val().length === 6) {
+        	$("#city").val("");
+            $("#state").val("");
+			$("#country").val("");
+			var pincode = el.val();
+			var url =  "https://api.postalpincode.in/pincode/" + pincode ;
+            $.ajax({
+                url: url,
+                cache: false,
+                dataType: "json",
+                type: "GET",
+                data: "zip=" + el.val(),
+                success: function(result, success) {
+                	var data = JSON.stringify(result[0].PostOffice);
+                	var data1 = JSON.parse(data);
+                	var data2 = data1[0];
+                	console.log(data2);
+					// alert(data2.District);
+					$('#country').val("");
+					$('#state').val("");
+					$('#city').val("");
+                    var city = data2.District;
+                    var state = data2.State;
+					var country = data2.Country;
+					
+					$('#country').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == country.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#state').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == state.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#city').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == city.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+					$("#country").selectmenu("refresh");
+					$('#state').change();
+					$('#city').change();
+                }
+            });
+        }
+    });
+});
+</script>

@@ -1,6 +1,6 @@
 <div class="te-container">
 	<article class="form-style-1">
-    	<form name="createuserform" method="" enctype="multipart/form-data">
+    	<form name="updateuserform" method="" enctype="multipart/form-data">
     		<h2>User Management</h2>
     		<!-- <div class="form-group">
 	            	<label style="display: none;">User Photo <span class="required">*</span></label>
@@ -37,15 +37,6 @@
 	            	<input type="text" id = "userName" name="userName" value= "<?php echo $getUserData[0]->userName ?>"/>
 	            	<label class="floating-label">User Name <span class="required">*</span></label>
 	            </div>
-	            <div class="form-group">
-	            	<i class="far fa-eye"></i>
-	                <input type="text" id = "password" name="password" />
-	                <label class="floating-label">Password<span class="required">*</span></label>
-	            </div>
-	            <!-- <div class="form-group">
-	                <label>Confirm Password<span class="required">*</span></label>
-	                <input type="text" id = "confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
-	            </div> -->
 	        </div>
 	            
 
@@ -54,8 +45,8 @@
 	            	<label>Gender <span class="required">*</span></label>
 	                <select id = "gender" name="gender" class="field-divided">
 	                <option value="">Select Gender</option>
-	                <option value="Male" <?php ($getUserData[0]->gender == "Male") ? ' selected="selected"' : ''?>>Male</option>
-	                <option value="Female" <?php ($getUserData[0]->gender == "Female") ? ' selected="selected"' : ''?>>Female</option>
+	                <option value="Male" <?php if($getUserData[0]->gender == "Male"){?> selected="selected" <?php }?>>Male</option>
+	                <option value="Female" <?php if($getUserData[0]->gender == "Female"){?> selected="selected" <?php }?>>Female</option>
 	              </select>
 	            </div>
 	            <div class="form-group">    
@@ -93,31 +84,40 @@
 	        </div>
 
             <div class="d-flex">
-	            <div class="form-group">
-	                <!-- <select id="city" name="city" class="field-divided">
-	                <option value="">Select City</option>
-	                <option value="Agra">Agra</option>
-	                <option value="Pakistan">Pakistan</option> -->
-	                <!-- </select>  -->
-	                <input type="text" id = "city" name="city" />
-	                <label class="floating-label">City</label>
+				<div class="form-group">
+	            	<label>Country</label>
+	                <select id="country" name="country" class="field-divided">
+					<option value="">Select Country</option>
+						<?php
+						foreach ($getCountries as $row){
+						?>
+		                <option value="<?php echo $row->id ?>" <?php if($getUserData[0]->country == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
+		                <?php } ?>
+	                </select> 
 	            </div>
 	            <div class="form-group">
-	                <!-- <select id="state" name="state" class="field-divided">
+	                <select id="state" name="state" class="field-divided">
 	                    <option value="">Select State</option>
-	                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-	                    </select>  -->
-	                    <input type="text" id = "state" name="state" />
+						<?php
+						foreach ($getStates as $row){
+						?>	
+	                    <option value="<?php echo $row->id ?>" <?php if($getUserData[0]->state == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
+						<?php } ?>
+	                    </select> 
+	                    <!-- <input type="text" id = "state" name="state" /> -->
 	                <label class="floating-label">State</label>
 	            </div>
 	        </div>
 	        <div class="form-group">
-            	<label>Country</label>
-                <select id="country" name="country" class="field-divided">
-	                <option value="">Select Country</option>
-	                <option value="Partnership">India</option>
-	                <option value="General Question">Pakistan</option>
+                <select id="city" name="city" class="field-divided">
+                <option value="">Select City</option>
+				<?php
+				foreach ($getCities as $row){
+				?>	
+                <option value="<?php echo $row->id ?>" <?php if($getUserData[0]->city == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
+				<?php } ?>
                 </select> 
+                <label class="floating-label">City</label> 
             </div>
 
     		<h2>Other Information</h2>
@@ -131,8 +131,8 @@
 	                <label>Status<span class="required">*</span></label>
 	                <select id="status" name="status" class="field-divided">
 		                <option value="">Select Status</option>
-		                <option value="1">Active</option>
-		                <option value="0">Inactive</option>
+		                <option value="1" <?php if($getUserData[0]->status == 1){?> selected="selected" <?php }?>>Active</option>
+		                <option value="0" <?php if($getUserData[0]->status == 0){?> selected="selected" <?php }?>>Inactive</option>
 	                </select> 
 	            </div>
             </div>
@@ -149,12 +149,13 @@
 						<?php } ?>
 	                </select> 
 	            </div>
+
 		        <div class="form-group">
 	                <label>Designation</label>
 	                <select id="designation" name="designation" class="field-divided">
 	                <option value="">Select Designation</option>
-	                <option value="Partnership">Manager</option>
-	                <option value="General Question">TL</option>
+	                <option value="Manager">Manager</option>
+	                <option value="TL">TL</option>
 	                </select> 
 	            </div>
             </div>
@@ -179,14 +180,18 @@
 	    <div class="d-flex">
 	            <div class="form-group">
 	                <label>University</label>
-	                <select id="universityId" name="universityId" class="field-divided">
+	                <select id="universityId" name="universityId[]" class="field-divided" multiple>
 	                	<option value="">Select University</option>
-						<?php
-						foreach($data=$universityList->result_array() as $row)
-						{ ?>
-						<option value="<?php echo $row['id'];?>" <?php echo ($row['id'] ==  $getUserData[0]->universityId) ? ' selected="selected"' : '';?>><?php echo $row['universityName']; ?></option>
-						<?php }
-						?>
+					<?php
+					foreach($data=$universityList->result_array() as $row){
+						$selected = "";
+						foreach($getUserUniversity as $roww){
+							if($row['id'] == $roww->universityId){
+							$selected='selected="selected"';
+							}
+						}?>
+					<option value="<?php echo $row['id'];?>" <?php echo $selected;?>><?php echo $row['universityName']; ?></option>
+					<?php } ?>
 	                </select> 
 	            </div>
 
@@ -194,30 +199,155 @@
 	                <label>Department</label>
 	                <select id="departmentId" name="departmentId" class="field-divided">
 	                    <option value="">Select Department</option>
-	                    <option value="1">IT</option>
-	                    <option value="2">Salse</option>
+	                    <option value="1" <?php if($getUserData[0]->departmentId == 1){?> selected="selected" <?php }?>>IT</option>
+	                    <option value="2" <?php if($getUserData[0]->departmentId == 2){?> selected="selected" <?php }?>>Salse</option>
 	                </select>
                 </div>
                 <div class="form-group">
 	                <label>External Access</label>
 	                <select id="externalAccess" name="externalAccess" class="field-divided">
 	                    <option value="">Select External Access</option>
-	                    <option value="1">Yes</option>
-	                    <option value="0">No</option>
+	                    <option value="1" <?php if($getUserData[0]->externalAccess == 1){?> selected="selected" <?php }?>>Yes</option>
+	                    <option value="0" <?php if($getUserData[0]->externalAccess == 0){?> selected="selected" <?php }?>>No</option>
 	                </select>
 				</div>
 				<div class="form-group">
 	                <label>User Role</label>
 	                <select id="roleId" name="roleId" class="field-divided">
 	                    <option value="">Select Role</option>
-	                    <option value="1">Role1</option>
-	                    <option value="2">Role2</option>
+	                    <?php foreach ($getRoles as $row){ ?>
+							<option value="<?php echo $row->id ?>" <?php if($getRolesUser[0]->roleId == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
+							<?php } ?>
 	                </select>
 	            </div>
 			</div>
+			<input type="hidden" id="userId" name="userId" value="<?php echo $getUserData[0]->id ?>">
             <div class="form-group cta-submit">
-                <input type="button" id ="createuserbtn" value="Submit" />
+                <input type="button" id ="updateuserbtn" value="Submit" />
             </div>
         </form>
     </article>
 </div>
+<script>
+$(document).on('click','#updateuserbtn',function(e) {
+	e.preventDefault()
+
+	if(($("#firstName").val().trim().length==0))
+	{
+		alert("Please Insert First Name");
+		exit;
+	}else if(($("#lastName").val().trim().length==0))
+	{
+		alert("Please Insert Last Name");
+		exit;
+	}else if(($("#userEmail").val().trim().length==0))
+	{
+		alert("Please Insert Email");
+		exit;
+	}else if(($("#employeeCode").val().trim().length==0))
+	{
+		alert("Please Insert Employee Code");
+		exit;
+	}else if(($("#gender").val().trim().length==0))
+	{
+		alert("Please select gender");
+		exit;
+	}else if(($("#userName").val().trim().length==0))
+	{
+		alert("Please Insert User Name");
+		exit;
+	}
+
+    var formdata = new FormData(updateuserform);
+	var url= "<?php echo _ROOT; ?>updateuser";
+	alert(url);
+    $.ajax({
+		 url: url, 
+		 //dataType: "text",
+		 cache: false,
+		 contentType: false,
+		 processData: false,
+		 data: formdata,                         
+		 type: "POST",
+		 success: function(data){
+			 console.log("Okkk" + data);
+			 var res=JSON.parse(data);
+			 if(res.success==true){
+				alert("User Updated");	
+				location.reload();		
+			 }	 
+			 else
+				 alert(res.error);
+		}
+     });
+});
+
+function checkPasswordMatch(){
+	var password = $("#password").val();
+	var confirmPassword = $("#repassword").val();
+	if (password != confirmPassword)
+		return false;
+	else
+		return true;
+}
+  
+  $(document).ready(function() {
+    $("#postalCode").keyup(function() {
+        var el = $(this);
+        if (el.val().length === 6) {
+        	$("#city").val("");
+            $("#state").val("");
+			$("#country").val("");
+			var pincode = el.val();
+			var url =  "https://api.postalpincode.in/pincode/" + pincode ;
+            $.ajax({
+                url: url,
+                cache: false,
+                dataType: "json",
+                type: "GET",
+                data: "zip=" + el.val(),
+                success: function(result, success) {
+                	var data = JSON.stringify(result[0].PostOffice);
+                	var data1 = JSON.parse(data);
+                	var data2 = data1[0];
+                	console.log(data2);
+					// alert(data2.District);
+					$('#country').val("");
+					$('#state').val("");
+					$('#city').val("");
+                    var city = data2.District;
+                    var state = data2.State;
+					var country = data2.Country;
+					
+					$('#country').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == country.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#state').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == state.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+
+					$('#city').find('option').each( function() {
+					var $this = $(this);
+					if ($this.text().trim() == city.trim()) {
+					$this.attr('selected','selected');
+					return false;
+					}
+					});
+					$("#country").selectmenu("refresh");
+					$('#state').change();
+					$('#city').change();
+                }
+            });
+        }
+    });
+});
+</script>

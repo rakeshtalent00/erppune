@@ -25,30 +25,7 @@ define("_ROOT",base_url());
 </main>
 </body>
 <script>
-	$(document).on('click','#createrolebtn',function(e) {
-	e.preventDefault()
-    var formdata = new FormData(createroleform);
-	var url= "http://localhost/erppune/createRole";
-    $.ajax({
-		 url: url, 
-		 cache: false,
-		 contentType: false,
-		 processData: false,
-		 data: formdata,                         
-		 type: "POST",
-		 success: function(data){
-			 console.log("Okkk" + data);
-			 var res=JSON.parse(data);
-			 if(res.success==true){
-				alert("Role Created");
-                $("#alertlabel").text('Role Created');
-                $("#modalAlert").modal('show');				
-			 }	 
-			 else
-				 alert(res.error);
-		}
-     });
-});
+	
 
 
   
