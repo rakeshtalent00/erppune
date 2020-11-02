@@ -55,6 +55,10 @@ $route['departmentList'] = 'Department/departmentList';
 $route['updateDepartment'] = 'Department/updateDepartment';
 
 
+$route['accessList'] = 'ModuleAccess';
+$route['createModuleAccess'] = 'ModuleAccess/createModuleAccess';
+$route['moduleAccessChecked'] = 'ModuleAccess/moduleAccessChecked';
+
 $route['Module'] = 'Module';
 $route['createModule'] = 'Module/createModule';
 $route['moduleList'] = 'Module/moduleList';
@@ -64,6 +68,8 @@ $route['subModule'] = 'SubModule';
 $route['createsubModule'] = 'SubModule/createsubModule';
 $route['submoduleList'] = 'SubModule/submoduleList';
 $route['updatesubModule'] = 'SubModule/updatesubModule';
+
+
 
 
 

@@ -12,6 +12,13 @@
 					
 				</div>
 				<ul class="menu d-flex f-col">
+				<li>
+						<i class="fas fa-users"></i>Module Access
+						<ul class="submenu">
+						<li><a href="<?php  echo _ROOT; ?>accessList"><i class="fas fa-user-plus"></i>Module Access</a></li>
+						<li><a href="<?php  echo _ROOT; ?>userList"><i class="fas fa-users"></i>User List</a></li>
+						</ul>
+					</li>
 					<li>
 						<i class="fas fa-users"></i>User Management
 						<ul class="submenu">
