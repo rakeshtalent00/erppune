@@ -1,5 +1,5 @@
 <?php
-class ModuleAccessmgt  extends CI_Model{
+class UserModuleAccessmgt  extends CI_Model{
 		private $conn='';
 		function __construct(){
 			$this->load->database();
@@ -9,7 +9,7 @@ class ModuleAccessmgt  extends CI_Model{
 		}  
 
 
-		public function createModuleAccess($data){
+		public function createUserModuleAccess($data){
 			$roleId = $data['userRole'];
 			$unsetData = $data;
 			unset($unsetData['userRole']); 
@@ -57,7 +57,7 @@ class ModuleAccessmgt  extends CI_Model{
 		}
 
 
-		public function moduleAccessChecked($userRole){
+		public function userModuleAccessChecked($userRole){
 		$this->db->where('deleted',0);
 		$query=$this->db->get('module');
 		$moduleList = $query->result();

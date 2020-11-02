@@ -1,9 +1,9 @@
 <?php
-class ModuleAccess extends CI_Controller{
+class UserModuleAccess extends CI_Controller{
 	function __construct()
 	{
 	 parent::__construct();
-	$this->load->model('ModuleAccessmgt');
+	$this->load->model('UserModuleAccessmgt');
 	$this->load->model('Usermgt');
 	$this->load->model('Modulemgt');
 	}
@@ -13,16 +13,16 @@ class ModuleAccess extends CI_Controller{
 	function index(){
 		$data['roleList'] = $this->Usermgt->getRoles();
 		$data['moduleList'] = $this->Modulemgt->getModules();
-		$data['subModuleList'] = $this->ModuleAccessmgt->subModuleList();
-		$data['accessList'] = $this->ModuleAccessmgt->accessList();
+		$data['subModuleList'] = $this->UserModuleAccessmgt->subModuleList();
+		$data['accessList'] = $this->UserModuleAccessmgt->accessList();
 		//echo "<pre>";print_r($data);die("Okkkk");
-		$this->load->view("accessListIndex",$data);
+		$this->load->view("useraccessListIndex",$data);
 	}
 
-	function createModuleAccess(){
+	function createUserModuleAccess(){
 		$data = $this->input->post();
 		//echo "<pre>";print_r($data);die("Okkk");
-		$res = $this->ModuleAccessmgt->createModuleAccess($data);
+		$res = $this->UserModuleAccessmgt->createUserModuleAccess($data);
 		$operation='';
 		if($res==true)
 		{
@@ -36,10 +36,10 @@ class ModuleAccess extends CI_Controller{
 		}
 	}
 
-	function moduleAccessChecked(){
+	function userModuleAccessChecked(){
 		$data = $this->input->post();
 		$userRole = $data['userRole'];
-		$res = $this->ModuleAccessmgt->moduleAccessChecked($userRole);
+		$res = $this->UserModuleAccessmgt->userModuleAccessChecked($userRole);
 		echo $res;
 	}
 	

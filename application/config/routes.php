@@ -59,6 +59,12 @@ $route['accessList'] = 'ModuleAccess';
 $route['createModuleAccess'] = 'ModuleAccess/createModuleAccess';
 $route['moduleAccessChecked'] = 'ModuleAccess/moduleAccessChecked';
 
+
+
+$route['useraccessList'] = 'UserModuleAccess';
+$route['createUserModuleAccess'] = 'UserModuleAccess/createUserModuleAccess';
+$route['userModuleAccessChecked'] = 'UserModuleAccess/userModuleAccessChecked';
+
 $route['Module'] = 'Module';
 $route['createModule'] = 'Module/createModule';
 $route['moduleList'] = 'Module/moduleList';
