@@ -30,7 +30,7 @@ class SubModule extends CI_Controller{
 	}
 
 	function submoduleList(){
-		$data['submoduleList'] = $this->SubModulemgt->getModules();
+		$data['submoduleList'] = $this->SubModulemgt->getsubModules();
 		$this->load->view("submoduleListIndex.php",$data);
 	}
 

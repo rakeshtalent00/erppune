@@ -52,7 +52,7 @@
 						<i class="fas fa-users-cog"></i>Sub Module Management
 						<ul class="submenu">
 						<li><a href="<?php  echo _ROOT; ?>subModule"><i class="fas fa-user-cog"></i>Create Sub Module</a></li>
-						<li><a href="<?php  echo _ROOT; ?>subModuleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
+						<li><a href="<?php  echo _ROOT; ?>submoduleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
 						</ul>
 					</li>					
 					<li><i class="fas fa-home"></i>Lorem</li>
