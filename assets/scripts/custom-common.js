@@ -100,7 +100,6 @@ $(document).ready(function() {
 		$(this).next('.sub-access').slideToggle('normal');
 	});
 
-
 /*
 ** End For Document Ready 
 */
