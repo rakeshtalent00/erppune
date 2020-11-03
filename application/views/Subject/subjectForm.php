@@ -1,7 +1,6 @@
 <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		<h2>User Management</h2>
     		<!-- <div class="form-group">
 	            	<label style="display: none;">User Photo <span class="required">*</span></label>
             		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
@@ -10,13 +9,6 @@
             			<span>Upload Photo</span>
             		</figure>
             </div> -->
-
-
-
-           
-subject_description
-subject_status
-
 
             <div class="d-flex">
 	            <div class="form-group">

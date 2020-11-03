@@ -238,6 +238,86 @@
         </form>
 	</article>
 </div>
+<div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+    		<!-- <div class="form-group">
+	            	<label style="display: none;">User Photo <span class="required">*</span></label>
+            		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
+            		<figure class="upload-user-bg">
+            			<img src="assets/images/upload-user.png">
+            			<span>Upload Photo</span>
+            		</figure>
+            </div> -->
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "subjectName" name="subjectName" />
+	            	<label class="floating-label">Subject Name<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "subjectCode" name="subjectCode" />
+	            	<label class="floating-label">Subject Code<span class="required">*</span></label>
+	            </div>
+	        </div>
+
+            <div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Subject Description <span class="required">*</span></label>
+	                <textarea id = "subjectDesc" name="subjectDesc" style="resize:none;"></textarea> 
+	            </div>
+	             <div class="form-group">    
+	            	<label>Subject Status <span class="required">*</span></label>
+	                <select id = "subjectStatus" name="subjectStatus" class="field-divided">
+	                <option value="">Select Status</option>
+	                <option value="Active">Active</option>
+	                <option value="Inactive">Inactive</option>
+	              </select>
+	            </div>
+            </div>    
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "passingMark" name="passingMark" />
+	            	<label class="floating-label">Passing Marks<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "totalMark" name="totalMark" />
+	            	<label class="floating-label">Total Marks<span class="required">*</span></label>
+	            </div>
+	            
+            </div>
+
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
+
+			<div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Created Date <span class="required">*</span></label>
+	                <input type="date" id = "createdDate" name="createdDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>Modified Date <span class="required">*</span></label>
+	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
+	            </div>
+            </div>
+
+
+            <div class="form-group cta-submit">
+                <input type="button" id ="createuserbtn" value="Submit" />
+            </div>
+        </form>
+	</article>
+</div>
+
 <script>
 $(document).on('click','#createuserbtn',function(e) {
 	e.preventDefault()
