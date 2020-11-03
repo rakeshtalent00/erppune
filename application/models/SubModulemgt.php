@@ -38,7 +38,7 @@ class SubModulemgt  extends CI_Model{
 			$insertsubmodule = array();
 			$submoduleId = $data['submoduleId'];
 			$insertsubmodule = $data;
-			unset($insertsubmodule['moduleId']);
+			unset($insertsubmodule['submoduleId']);
 			$this->db->where('id',$submoduleId);  
 			$this->db->update('submodule', $insertsubmodule);
 			if(($this->db->insert_id())){

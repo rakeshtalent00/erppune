@@ -1,18 +1,29 @@
 <div class="te-container">
 <form name="moduleaccessform" method="" enctype="multipart/form-data">
 				<div class="access-control">
-					<div class="user-role form-group">
-						<label>Select User Role</label>
-						<select id="userRole" name="userRole">
-							<option value="">Select</option>
-                            <?php
-                            if(!empty($roleList)){
-                            foreach($roleList as $roleListData) { ?>
-                            <option value="<?php echo $roleListData->id?>"><?php echo $roleListData->name?></option>
-                            <?php  }} ?>
-                            
-						</select>
-					</div>
+
+				<div class="d-flex">
+				<div class="form-group">
+				<label>Select User Role</label>
+				<select id="userRole" name="userRole">
+				<option value="">Select User</option>
+				<?php
+				if(!empty($roleList)){
+				foreach($roleList as $roleListData) { ?>
+				<option value="<?php echo $roleListData->id?>"><?php echo $roleListData->name?></option>
+				<?php  }} ?>
+				</select>
+				</div>
+
+				
+				<div class="form-group">
+				<label>Select User Role</label>
+				<select id="userId" name="userId">
+				<option value="">Select</option>
+				
+				</select>
+				</div>
+				</div>
 
 					<section class="user-table">
 						<p class="d-flex expand-ctas">
@@ -172,15 +183,38 @@ $(document).on('click','#createmoduleaccess',function(e) {
 
 
 
+// $(document).on('change','#userRole',function(e) {
+//     e.preventDefault()
+//     var userRole = $(this).val();
+//     //alert(userRole);
+// 	var url= "<?php echo _ROOT; ?>moduleAccessChecked";
+//     $.post(url ,{userRole : userRole},function(data){
+//         console.log("okkkkkkk",data);
+//         $("#defaultLoad").hide();
+//        $("#dynamicLoad").html(data);
+//     });
+// });
+
+
 $(document).on('change','#userRole',function(e) {
     e.preventDefault()
     var userRole = $(this).val();
-    //alert(userRole);
-	var url= "<?php echo _ROOT; ?>moduleAccessChecked";
+	var url= "<?php echo _ROOT; ?>userModuleAccessChecked";
     $.post(url ,{userRole : userRole},function(data){
-        console.log("okkkkkkk",data);
-        $("#defaultLoad").hide();
-       $("#dynamicLoad").html(data);
+        // $("#defaultLoad").hide();
+       $("#userId").html(data);
     });
-});
+})
+
+$(document).on('change','#userId',function(e) {
+	e.preventDefault()
+	alert("Boom");
+	var userRole = $("$userRole").val();
+	var userId = $("#userId").val();
+	var url= "<?php echo _ROOT; ?>userModuleAccessCheckedUser";
+    $.post(url ,{userRole : userRole,userId : userId},function(data){
+         $("#defaultLoad").hide();
+		 $("#dynamicLoad").html(data);
+    });
+})
 </script>

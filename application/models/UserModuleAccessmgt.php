@@ -56,8 +56,27 @@ class UserModuleAccessmgt  extends CI_Model{
 			return $query->result();
 		}
 
-
 		public function userModuleAccessChecked($userRole){
+			$this->db->where('deleted',0);
+			$this->db->where('roleId',$userRole);
+			$query=$this->db->get('acl_roles_users');
+			$userIds = $query->result();
+			$userIdArray = array();
+			foreach ($userIds as $userId){
+				$userIdArray[] = $userId->userId;
+			}
+			$userIdArrayUniq  = array_unique($userIdArray);
+			$userIdsForIn = implode(",",$userIdArrayUniq);
+			$query = $this->db->query("select id,userEmail from users where id in ($userIdsForIn) and deleted='0'");
+			$userDataList=$query->result();
+			foreach($userDataList as $userData){
+			$html .= "<option value=''>Select User</option><option value'$userData->id' >$userData->userEmail</option>";
+			}
+			return $html;
+		}
+
+
+		public function userModuleAccessCheckedUser($userRole,$userId){
 		$this->db->where('deleted',0);
 		$query=$this->db->get('module');
 		$moduleList = $query->result();

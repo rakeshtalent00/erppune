@@ -1,11 +1,10 @@
-
 <div class="te-container">
 <article class="form-style-1">
     	<form name="createsubmoduleform" method="" enctype="multipart/form-data">
-    		<h2>Sub Module Management</h2>
+			<h2>Sub Module Management</h2>
             <div class="d-flex">
 	            <div class="form-group">
-	            	<input type="text" id = "name" name="name" />
+	            	<input type="text" id = "submodule" name="submodule" />
 	            	<label class="floating-label">Sub Module Name<span class="required">*</span></label>
 	            </div>
 
@@ -34,10 +33,11 @@
 			<div class="d-flex">
 					<div class="form-group">
 				<label>Parent Module<span class="required">*</span></label>
-				<select id="parentModule" name="parentModule" class="field-divided">
-	                    <option value="">Select status</option>
-	                    <option value="1">Active</option>
-	                    <option value="0">Inactive</option>
+				<select id="moduleId" name="moduleId" class="field-divided">
+	                    <option value="">Select Module</option>
+	                    <?php foreach ($moduleList as $row){ ?>	
+							<option value="<?php echo $row->id ?>"><?php echo $row->name; ?></option>
+							<?php } ?>
 	                </select>
 	            </div>
             </div>
@@ -52,7 +52,7 @@
 <script>
 $(document).on('click','#createsubmodulebtn',function(e) {
 	e.preventDefault()
-	if(($("#name").val().trim().length==0))
+	if(($("#submodule").val().trim().length==0))
 	{
 		alert("Please Insert Name");
 		exit;
@@ -64,9 +64,9 @@ $(document).on('click','#createsubmodulebtn',function(e) {
 	{
 		alert("Please Select title");
 		exit;
-	}else if(($("#parentModule").val().trim().length==0))
+	}else if(($("#moduleId").val().trim().length==0))
 	{
-		alert("Please Select Parent Module");
+		alert("Please Select module");
 		exit;
 	}
     var formdata = new FormData(createsubmoduleform);
@@ -82,7 +82,7 @@ $(document).on('click','#createsubmodulebtn',function(e) {
 			//  console.log("Okkk" + data);
 			 var res=JSON.parse(data);
 			 if(res.success==true){
-				alert("Module Created");	
+				alert("Sub Module Created");	
 				location.reload();	
 			 }	 
 			 else

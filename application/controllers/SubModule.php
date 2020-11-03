@@ -4,17 +4,21 @@ class SubModule extends CI_Controller{
 	{
 	 parent::__construct();
 	$this->load->model('SubModulemgt');
+	$this->load->model('Modulemgt');
 	}
 	
 	
 	
 	function index(){
-		$this->load->view("submoduleIndex");
+		$data['moduleList'] = $this->Modulemgt->getModules();
+		//echo "<pre>";print_r($data);die("Okkk");
+		$this->load->view("submoduleIndex",$data);
 	}
 
 	
 	function createsubModule(){
 		$data = $this->input->post();
+		//echo "<pre>";print_r($data);die("Testttttttt");
 		$res = $this->SubModulemgt->createsubModule($data);
 		$operation='';
 		if($res==true)
@@ -36,8 +40,9 @@ class SubModule extends CI_Controller{
 
 	function updatesubModuleForm(){
 		$userId = $this->uri->segment(3);
+		// echo $userId;die("Okk");
 		$data['submoduleList'] = $this->SubModulemgt->getsubModuleData($userId);
-		//echo "<pre>";print_r($data);die("Okkk");
+		$data['moduleList'] = $this->Modulemgt->getModules();
 		$this->load->view("updatesubModuleFormIndex",$data);
 	}
 
@@ -57,8 +62,5 @@ class SubModule extends CI_Controller{
 			echo json_encode($operation);
 		}
 	}
-
-	
-	
 }
 ?>
