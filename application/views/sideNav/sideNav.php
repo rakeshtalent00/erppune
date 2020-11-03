@@ -55,7 +55,7 @@
 						<li><a href="<?php  echo _ROOT; ?>submoduleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
 						</ul>
 					</li>					
-					<li><i class="fas fa-home"></i>Lorem</li>
+					<li><a href="<?php  echo _ROOT; ?>subjectform"><i class="fas fa-home"></i>Subject</a></li>
 				</ul>
 			</div>
 		</nav>
