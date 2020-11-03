@@ -68,29 +68,41 @@ class Usermgt  extends CI_Model{
 		}
 		else
 		{
-			// $query = $this->db->query("select * from user_university where userId = '$userId' and deleted='0'");
-			// $num_rows=$query->num_rows();
-			// $result=$query->result();
-			// $dataArray = array();
-			// $dataArraySubmit = array();
-			// if($num_rows > 0){
-			// 	foreach($result as $value){
-			// 		$dataArray[$value->universityId."_".$value->userId] = 0;
-			// 	}
-			// }
+			$universityId = $data['universityId'];
+			$query = $this->db->query("select * from user_university where userId = '$userId' and deleted='0'");
+			$num_rows=$query->num_rows();
+			$result=$query->result();
+			$dataArray = array();
+			if($num_rows > 0){
+				foreach($result as $value){
+					$dataArray[$value->universityId."_".$value->userId] = 0;
+				}
+			}else{
+				foreach ($universityId as $valueUniversity){
+					$universityData = array('universityId' => $valueUniversity,'userId' => $lastInsertedId);
+					$this->db->insert('user_university', $universityData);
+				}
+			}
+
+
+			
+			
 
 
 
-			// $arrayDataSave = array();
-			// foreach ($insertUser as $key=> $value){
+			
+
+
+			$arrayDataSave = array();
+			foreach ($insertUser as $key=> $value){
 				
-			// 	$submitDataKey = $roleId."_".$moduleId."_".$subModuleId."_".$accessId;
-			// 	$arrayDataSave[$submitDataKey] = 0;
-			// 	if(!array_key_exists($submitDataKey,$dataArray)){
-			// 		$insertArray = array("role_id" => $roleId,"module_id" => $moduleId,"sub_module_id"=>$subModuleId , "access_id" => $accessId);
-			// 		$this->db->insert('role_access', $insertArray);
-			// 	}
-			//  }
+				$submitDataKey = $roleId."_".$moduleId."_".$subModuleId."_".$accessId;
+				$arrayDataSave[$submitDataKey] = 0;
+				if(!array_key_exists($submitDataKey,$dataArray)){
+					$insertArray = array("role_id" => $roleId,"module_id" => $moduleId,"sub_module_id"=>$subModuleId , "access_id" => $accessId);
+					$this->db->insert('role_access', $insertArray);
+				}
+			 }
 
 
 			//  $universityData = array();

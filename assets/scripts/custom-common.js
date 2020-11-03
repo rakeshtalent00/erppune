@@ -69,4 +69,39 @@ $(document).ready(function() {
 		} else
 		$(this).next('input').attr('type','password');
 	});
+
+/*
+** Script for Access Control forms 
+*/
+
+	$('.user').click(function(){
+		$('.user').removeClass('active');
+		$(this).addClass('active');
+		$('.user-details').slideUp();
+		$(this).find('.user-details').slideDown();
+	});
+
+	$('tr').click(function(){
+		console.log($(this).parent().parent());
+		$(this).next('.user-details').slideToggle();
+	});
+
+
+	$('.expand-access').click(function(){
+		$('.sub-access').slideDown();
+	});
+	$('.collapse-access').click(function(){
+		$('.sub-access').slideUp();
+	});
+
+	$('.sub-access').prev('tr').addClass('has-submenu');
+	$('.sub-access').prev('tr').click(function(){
+		$(this).toggleClass('clicked');
+		$(this).next('.sub-access').slideToggle('normal');
+	});
+
+/*
+** End For Document Ready 
+*/
+
 });	

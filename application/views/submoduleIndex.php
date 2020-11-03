@@ -20,8 +20,8 @@ define("_ROOT",base_url());
 <body>
 <?php require_once("header/header.php"); ?>
 <main class="d-flex">
-	<?php require_once("sideNav/sideNav.php"); ?>   
-	<?php require_once("submodule/createsubModuleForm.php"); ?>      
+	<?php require_once("sideNav/sideNav.php"); ?>
+	<?php require_once("submodule/createsubModuleForm.php"); ?>    
 </main>
 </body>
 </html>
