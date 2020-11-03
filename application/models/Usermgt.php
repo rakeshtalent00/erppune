@@ -40,18 +40,6 @@ class Usermgt  extends CI_Model{
 		}
 	}
 
-
-	public function updateuserwwwwwww($userid,$data){
-		$this->db->where('userId',$userid);  
-		$this->db->update('users', $data);
-		if(!($this->db->insert_id())){
-			return false;
-		}else{
-			
-			return true;
-		}
-	}
-
 	public function updateRole($data){
 		$insertUser = array();
 		$roleId = $data['roleId'];
@@ -80,31 +68,57 @@ class Usermgt  extends CI_Model{
 		}
 		else
 		{
-			 $universityId = $data['universityId'];
-			 $universityData = array();
-			 //$lastInsertedId = $this->db->insert_id();
-			 
-			 foreach ($universityId as $valueUniversity){
+			// $query = $this->db->query("select * from user_university where userId = '$userId' and deleted='0'");
+			// $num_rows=$query->num_rows();
+			// $result=$query->result();
+			// $dataArray = array();
+			// $dataArraySubmit = array();
+			// if($num_rows > 0){
+			// 	foreach($result as $value){
+			// 		$dataArray[$value->universityId."_".$value->userId] = 0;
+			// 	}
+			// }
 
-				// $universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 0);
-				// //$this->db->where('userId',$userId);
-				// $this->db->insert('user_university', $universityData);
 
+
+			// $arrayDataSave = array();
+			// foreach ($insertUser as $key=> $value){
 				
-				$universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 1);
-				$this->db->where('userId',$userId);
-				$this->db->update('user_university', $universityData);
+			// 	$submitDataKey = $roleId."_".$moduleId."_".$subModuleId."_".$accessId;
+			// 	$arrayDataSave[$submitDataKey] = 0;
+			// 	if(!array_key_exists($submitDataKey,$dataArray)){
+			// 		$insertArray = array("role_id" => $roleId,"module_id" => $moduleId,"sub_module_id"=>$subModuleId , "access_id" => $accessId);
+			// 		$this->db->insert('role_access', $insertArray);
+			// 	}
+			//  }
 
-				// $universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 0);
-				// $this->db->where('id',$valueUniversity);
-			 	// $this->db->update('user_university', $universityData);
-			 }
+
+			//  $universityData = array();
+			//  foreach ($universityId as $valueUniversity){				
+			// 	$universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 1);
+			// 	$this->db->where('userId',$userId);
+			// 	$this->db->update('user_university', $universityData);
+			//  }
+
+			//  $universityId = $data['universityId'];
+			//  $oldUnversityData =  self :: getUserUniversity($userId);
+			//  foreach ($oldUnversityData as $oldUnversityval){
+			// 	$oldUnversityvalArray[$oldUnversityval->]
+			//  }
+			//  echo "<pre>";print_r($oldUnversityData);die("Okkk");
+
+
+
+			//  $universityData = array();
+			//  foreach ($universityId as $valueUniversity){				
+			// 	$universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 1);
+			// 	$this->db->where('userId',$userId);
+			// 	$this->db->update('user_university', $universityData);
+			//  }
+			
 
 
 			 foreach ($universityId as $valueUniversity){
-
-				
-
 				$universityData = array('universityId' => $valueUniversity,'userId' => $userId,"deleted" => 0);
 				$this->db->where('id',$valueUniversity);
 			 	$this->db->update('user_university', $universityData);

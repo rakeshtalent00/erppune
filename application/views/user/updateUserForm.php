@@ -215,9 +215,10 @@
 	                <label>User Role</label>
 	                <select id="roleId" name="roleId" class="field-divided">
 	                    <option value="">Select Role</option>
-	                    <?php foreach ($getRoles as $row){ ?>
+						<?php foreach ($getRoles as $row){ ?>
+							<?php if(!empty($getRolesUser) ){?>
 							<option value="<?php echo $row->id ?>" <?php if($getRolesUser[0]->roleId == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
-							<?php } ?>
+							<?php }} ?>
 	                </select>
 	            </div>
 			</div>

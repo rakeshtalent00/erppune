@@ -88,14 +88,23 @@ define("_ROOT",base_url());
 
 
 											<p>Education: <span><?php echo $row['education']; ?></span></p>
-											<p>Status: <span><?php echo $row['status']; ?></span></p>
-											<p>Manager: <span><?php echo $row['reportsTo']; ?></span></p>
+											<?php if($row['status'] == 1){ ?>
+											<p>Status: <span>Active</span></p>
+											<?php }else{ ?>
+												<p>Status: <span>Inactive</span></p>
+											<?php } ?>
+											<p>Reports To: <span><?php echo $row['reportsTo']; ?></span></p>
 											<p>Designation: <span><?php echo $row['designation']; ?></span></p>
 											<p>Media: <span><?php echo $row['media']; ?></span></p>
 											<p>Campaign: <span><?php echo $row['campaign']; ?></span></p>
-											<p>University: <span><?php echo $row['universityId']; ?></span></p>
+											<!-- <p>University: <span><?php echo $row['universityId']; ?></span></p> -->
 											<p>Department: <span><?php echo $row['departmentId']; ?></span></p>
 											<p>External Access: <span><?php echo $row['externalAccess']; ?></span></p>
+											<?php if($row['externalAccess'] == 1){ ?>
+												<p>External Access: <span>Yes</span></p>
+											<?php }else{ ?>
+												<p>External Access: <span>No</span></p>
+											<?php } ?>
 											<!-- <p>User Role: <span><?php echo $row['roleId']; ?></span></p> -->
 										</div>
 									</div>
@@ -284,16 +293,6 @@ define("_ROOT",base_url());
 			});
 
 		});
-
-
-
-	// $("#editData").on("click",function(){
-	// 	var dataId = $("#dataId").val();
-	// 	var url = "<?php echo _ROOT; ?>/User/updateUserForm";
-	// 	$.post(url,{dataId : dataId},function(){
-	// 	});
-	// });
-
 	</script>
 
 </html>
