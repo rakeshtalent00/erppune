@@ -36,6 +36,14 @@ class UserModuleAccess extends CI_Controller{
 		}
 	}
 
+	function userModuleAccessCheckedUser(){
+		$data = $this->input->post();
+		$userRole = $data['userRole'];
+		$userId = $data['userId'];
+		$res = $this->UserModuleAccessmgt->userModuleAccessCheckedUser($userRole,$userId);
+		echo $res;
+	}
+
 	function userModuleAccessChecked(){
 		$data = $this->input->post();
 		$userRole = $data['userRole'];

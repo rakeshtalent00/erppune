@@ -1,11 +1,11 @@
 <div class="te-container">
 	<article class="form-style-1">
 	<form name="updatesubmoduleform" method="" enctype="multipart/form-data">
-    		<h2>Sub Module Management</h2>
+			<h2>Sub Module Management</h2>
             <div class="d-flex">
 	            <div class="form-group">
-	            	<input type="text" id = "name" name="name"  value="<?php echo $submoduleList[0]->name ?>"/>
-	            	<label class="floating-label">Department Name<span class="required">*</span></label>
+	            	<input type="text" id = "subModule" name="subModule"  value="<?php echo $submoduleList[0]->subModule ?>"/>
+	            	<label class="floating-label">Sub Module Name<span class="required">*</span></label>
 	            </div>
 				<div class="form-group">
 				<label>Title<span class="required">*</span></label>
@@ -23,19 +23,18 @@
 	                </select>
 	            </div>
 				<div class="form-group">
-				<label>Description<span class="required">*</span></label>
+				<label>Description</label>
 	            	<input type="text" id = "description" name="description" value="<?php echo $submoduleList[0]->description ?>"/>
 	            </div>
-				<div class="d-flex">
-					<div class="form-group">
+				<div class="form-group">
 				<label>Parent Module<span class="required">*</span></label>
-				<select id="parentModule" name="parentModule" class="field-divided">
-	                    <option value="">Select status</option>
-	                    <option value="1">Active</option>
-	                    <option value="0">Inactive</option>
+				<select id="moduleId" name="moduleId" class="field-divided">
+	                    <option value="">Select Sub Module</option>
+	                    <?php foreach ($moduleList as $row){ ?>	
+							<option value="<?php echo $row->id ?>" <?php if($submoduleList[0]->moduleId == $row->id){?> selected="selected" <?php }?>><?php echo $row->name; ?></option>
+							<?php } ?>
 	                </select>
 	            </div>
-            </div>
 	            <input type="hidden" id="submoduleId" name="submoduleId" value="<?php echo $submoduleList[0]->id ?>">
             </div>
 			
@@ -48,9 +47,9 @@
 <script>
 $(document).on('click','#updatesubmodulebtn',function(e) {
 	e.preventDefault()
-	if(($("#name").val().trim().length==0))
+	if(($("#subModule").val().trim().length==0))
 	{
-		alert("Please Insert Name");
+		alert("Please Insert Sub Module");
 		exit;
 	}else if(($("#title").val().trim().length==0))
 	{
@@ -62,7 +61,12 @@ $(document).on('click','#updatesubmodulebtn',function(e) {
 		alert("Please Select Status");
 		exit;
 	}
-    var formdata = new FormData(updatesunmoduleform);
+	else if(($("#moduleId").val().trim().length==0))
+	{
+		alert("Please Select moduleId");
+		exit;
+	}
+    var formdata = new FormData(updatesubmoduleform);
 	var url= "<?php echo _ROOT; ?>updatesubModule";
     $.ajax({
 		 url: url, 

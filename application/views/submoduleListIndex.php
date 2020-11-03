@@ -44,11 +44,11 @@ define("_ROOT",base_url());
 				            </tr>
 				        </thead>
 						<?php 
-						if (!empty($moduleList))
-						foreach($moduleList as $row){ 
+						if (!empty($submoduleList))
+						foreach($submoduleList as $row){ 
 						?>	
 		        	<tr>
-		                <td><?php echo $row->name ?></td>
+		                <td><?php echo $row->subModule ?></td>
 		                <td><?php echo $row->title ?></td>
 						<?php if($row->status == 1){ ?>
 		                <td>Active</td>
@@ -56,7 +56,7 @@ define("_ROOT",base_url());
 							<td>In Active</td>
 						<?php } ?>
 		                <td><?php echo $row->description ?></td>
-		                <td><a id="editData" href="<?php echo _ROOT; ?>Module/updateModuleForm/<?php echo $row->id; ?>"><span class='cta-edit-user'>Edit</a></td>
+		                <td><a id="editData" href="<?php echo _ROOT; ?>SubModule/updatesubModuleForm/<?php echo $row->id; ?>"><span class='cta-edit-user'>Edit</a></td>
 		            </tr>
 		            
 				<?php }?>
