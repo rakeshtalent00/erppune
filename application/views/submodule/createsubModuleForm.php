@@ -18,7 +18,7 @@
 
             <div class="d-flex">
 				<div class="form-group">
-				<label>Description<span class="required">*</span></label>
+				<label>Description</label>
 	            	<input type="text" id = "description" name="description" />
 	            </div>
 					<div class="form-group">
@@ -63,6 +63,10 @@ $(document).on('click','#createsubmodulebtn',function(e) {
 	}else if(($("#title").val().trim().length==0))
 	{
 		alert("Please Select title");
+		exit;
+	}else if(($("#parentModule").val().trim().length==0))
+	{
+		alert("Please Select Parent Module");
 		exit;
 	}
     var formdata = new FormData(createsubmoduleform);
