@@ -31,8 +31,10 @@
 }
 .side-nav ul li{
     position: relative;
-    width: 90%;
-    padding: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    padding: 10px 0 10px 10px; 
     margin-bottom: 0;
     border-bottom: 1px solid;
     cursor: pointer;
@@ -48,16 +50,15 @@
     color: #fff;
 }
 .side-nav .submenu{
+    display: none;
     margin-top: 5px;
+    padding:0; 
     padding-left: 0;
+    background: #244895;
+    width: 100%;
 }
 .side-nav .submenu li:hover{
     background: #0C8FBE;
-}
-.side-nav .submenu{
-    display: none;
-    padding:0; 
-    background: #244895;
 }
 .side-nav .has-submenu:after{
     display: block;
