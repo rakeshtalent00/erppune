@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['Department'] = 'Department';
+$route['department'] = 'Department';
 $route['createDepartment'] = 'Department/createDepartment';
 $route['departmentList'] = 'Department/departmentList';
 $route['updateDepartment'] = 'Department/updateDepartment';
@@ -66,7 +66,7 @@ $route['createUserModuleAccess'] = 'UserModuleAccess/createUserModuleAccess';
 $route['userModuleAccessChecked'] = 'UserModuleAccess/userModuleAccessChecked';
 $route['userModuleAccessCheckedUser'] = 'UserModuleAccess/userModuleAccessCheckedUser';
 
-$route['Module'] = 'Module';
+$route['module'] = 'Module';
 $route['createModule'] = 'Module/createModule';
 $route['moduleList'] = 'Module/moduleList';
 $route['updateModule'] = 'Module/updateModule';
@@ -77,7 +77,8 @@ $route['submoduleList'] = 'SubModule/submoduleList';
 $route['updatesubModule'] = 'SubModule/updatesubModule';
 
 
-
+$route['subject'] = 'Subject';
+$route['subjectForm'] = 'Subject/subjectForm';
 
 
 $route['roleList'] = 'User/roleList';
