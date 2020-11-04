@@ -23,6 +23,7 @@ label.floating-label{
     pointer-events: none;
 }
 input:focus ~ label,
+textarea:focus ~ label,
 .shifted ~ label{
     top: -12px;
     transition: 0.2s linear;
