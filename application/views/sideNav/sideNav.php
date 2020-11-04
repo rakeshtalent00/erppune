@@ -55,7 +55,14 @@
 						<li><a href="<?php  echo _ROOT; ?>submoduleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
 						</ul>
 					</li>					
-					<li><i class="fas fa-home"></i>Lorem</li>
+					<li>
+						<i class="fas fa-users-cog"></i>Subject
+						<ul class="submenu">
+						<li><a href="<?php  echo _ROOT; ?>subject"><i class="fas fa-user-cog"></i>Create Subject</a></li>
+						<li><a href="<?php  echo _ROOT; ?>subjectList"><i class="fas fa-users-cog"></i>All Subjects</a></li>
+						</ul>
+					</li>					
+					<li><i class="fas fa-home"></i>Subject</li>
 				</ul>
 			</div>
 		</nav>
