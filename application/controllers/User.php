@@ -30,7 +30,13 @@ class User extends MY_Controller{
 
 	function roleList(){
 		$data['roleList'] = $this->Usermgt->getRoles();
-		$this->load->view("roleListIndex.php",$data);
+
+		$this->data = $data;
+		$this->page = "user/listRoles";
+		$this->title = "Roles List";
+		$this->layout();
+
+		//$this->load->view("roleListIndex.php",$data);
 	}
 
 
