@@ -143,11 +143,11 @@
 <script>
 $(document).on('click','#createmoduleaccess',function(e) {
 	e.preventDefault()
-	// if(($("#userRole").val().trim().length==0))
-	// {
-	// 	alert("Please Select User Role");
-	// 	exit;
-	// }
+	if(($("#userRole").val().trim().length==0))
+	{
+		alert("Please Select User Role");
+		exit;
+	}
     var formdata = new FormData(moduleaccessform);
 	var url= "<?php echo _ROOT; ?>createModuleAccess";
     $.ajax({
@@ -175,7 +175,6 @@ $(document).on('click','#createmoduleaccess',function(e) {
 $(document).on('change','#userRole',function(e) {
     e.preventDefault()
     var userRole = $(this).val();
-    //alert(userRole);
 	var url= "<?php echo _ROOT; ?>moduleAccessChecked";
     $.post(url ,{userRole : userRole},function(data){
         console.log("okkkkkkk",data);

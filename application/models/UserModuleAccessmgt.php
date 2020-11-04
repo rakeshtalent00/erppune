@@ -69,8 +69,9 @@ class UserModuleAccessmgt  extends CI_Model{
 			$userIdsForIn = implode(",",$userIdArrayUniq);
 			$query = $this->db->query("select id,userEmail from users where id in ($userIdsForIn) and deleted='0'");
 			$userDataList=$query->result();
+			$html = "";
 			foreach($userDataList as $userData){
-			$html .= "<option value=''>Select User</option><option value'$userData->id' >$userData->userEmail</option>";
+			$html .= "<option value=''>Select User</option><option value='$userData->id' >$userData->userEmail</option>";
 			}
 			return $html;
 		}

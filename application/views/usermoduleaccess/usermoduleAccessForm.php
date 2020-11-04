@@ -209,7 +209,7 @@ $(document).on('change','#userRole',function(e) {
 $(document).on('change','#userId',function(e) {
 	e.preventDefault()
 	alert("Boom");
-	var userRole = $("$userRole").val();
+	var userRole = $("#userRole").val();
 	var userId = $("#userId").val();
 	var url= "<?php echo _ROOT; ?>userModuleAccessCheckedUser";
     $.post(url ,{userRole : userRole,userId : userId},function(data){
