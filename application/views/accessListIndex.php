@@ -8,7 +8,7 @@ define("_ROOT",base_url());
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-upload-style.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-list-view.css"/>
 		<link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/custom-basic-styles.css"/>
@@ -28,7 +28,6 @@ define("_ROOT",base_url());
 		
 		</main>
 	</body>
-  
 <script type="text/javascript" charset="utf8" src=""></script>
 <script src="<?php  echo _ROOT; ?>assets/scripts/jquery.min.js"></script>
 <script src="<?php  echo _ROOT; ?>assets/scripts/font-awesome.js"></script>

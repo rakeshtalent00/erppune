@@ -11,19 +11,21 @@ class UserModuleAccessmgt  extends CI_Model{
 
 		public function createUserModuleAccess($data){
 			$roleId = $data['userRole'];
+			$userId = $data['userId'];
 			$unsetData = $data;
 			unset($unsetData['userRole']); 
+			unset($unsetData['userId']); 
 			$insertUser = array_filter($unsetData);
 			//echo "<pre>";print_r($kamal);die("Okkk");
 			$insertArray = array();
-			$query = $this->db->query("select * from role_access where role_id = '$roleId' and deleted='0'");
+			$query = $this->db->query("select * from user_role_access where role_id = '$roleId' and user_id = '$userId' and deleted='0'");
 			$num_rows=$query->num_rows();
 			$result=$query->result();
 			$dataArray = array();
 			$dataArraySubmit = array();
 			if($num_rows > 0){
 				foreach($result as $value){
-					$dataArray[$value->role_id."_".$value->module_id."_".$value->sub_module_id."_".$value->access_id] = 0;
+					$dataArray[$value->role_id."_".$value->user_id."_".$value->module_id."_".$value->sub_module_id."_".$value->access_id] = 0;
 				}
 			}
 			
@@ -33,17 +35,17 @@ class UserModuleAccessmgt  extends CI_Model{
 				$moduleId = $keyData[0];
 				$subModuleId = $keyData[1];
 				$accessId = $keyData[2];
-				$submitDataKey = $roleId."_".$moduleId."_".$subModuleId."_".$accessId;
+				$submitDataKey = $roleId."_".$userId."_".$moduleId."_".$subModuleId."_".$accessId;
 				$arrayDataSave[$submitDataKey] = 0;
 				if(!array_key_exists($submitDataKey,$dataArray)){
-					$insertArray = array("role_id" => $roleId,"module_id" => $moduleId,"sub_module_id"=>$subModuleId , "access_id" => $accessId);
-					$this->db->insert('role_access', $insertArray);
+					$insertArray = array("role_id" => $roleId,"user_id" => $userId,"module_id" => $moduleId,"sub_module_id"=>$subModuleId , "access_id" => $accessId);
+					$this->db->insert('user_role_access', $insertArray);
 				}
 			 }
 			foreach($result as $value){
-				$resultSave = $value->role_id."_".$value->module_id."_".$value->sub_module_id."_".$value->access_id;
+				$resultSave = $value->role_id."_".$value->user_id."_".$value->module_id."_".$value->sub_module_id."_".$value->access_id;
 				if(!array_key_exists($resultSave,$arrayDataSave)){
-					$query = $this->db->query("update role_access set deleted = '1' where role_id = $value->role_id and module_id = $value->module_id and sub_module_id = $value->sub_module_id and access_id = $value->access_id ");
+					$query = $this->db->query("update user_role_access set deleted = '1' where role_id = $value->role_id and user_id = $value->user_id and module_id = $value->module_id and sub_module_id = $value->sub_module_id and access_id = $value->access_id ");
 				}
 			}
 			return true;
@@ -69,8 +71,9 @@ class UserModuleAccessmgt  extends CI_Model{
 			$userIdsForIn = implode(",",$userIdArrayUniq);
 			$query = $this->db->query("select id,userEmail from users where id in ($userIdsForIn) and deleted='0'");
 			$userDataList=$query->result();
+			$html = "";
 			foreach($userDataList as $userData){
-			$html .= "<option value=''>Select User</option><option value'$userData->id' >$userData->userEmail</option>";
+			$html .= "<option value=''>Select User</option><option value='$userData->id' >$userData->userEmail</option>";
 			}
 			return $html;
 		}
@@ -85,18 +88,25 @@ class UserModuleAccessmgt  extends CI_Model{
 		$query1=$this->db->get('submodule');
 		$subModuleList = $query1->result();
 
-
-
 		$this->db->where('deleted',0);
 		$this->db->where('role_id',$userRole);
-		$query2=$this->db->get('role_access');
+		$this->db->where('user_id',$userId);
+		$query2=$this->db->get('user_role_access');
 		$roleAccess = $query2->result();
+
+		$num_rows=$query2->num_rows();
+		if(!$num_rows > 0){
+			$this->db->where('deleted',0);
+			$this->db->where('role_id',$userRole);
+			$query2=$this->db->get('role_access');
+			$roleAccess = $query2->result();
+		}
+
 
 		$roleValData = array();
 		foreach($roleAccess as $roleVal){
 			$roleValData[$roleVal->module_id."_".$roleVal->sub_module_id."_".$roleVal->access_id] = 0;
 		}
-		//echo "<pre>";print_r($roleValData);die("Okkk");
 
 		$data="";
 		foreach($moduleList as $moduleListData) {

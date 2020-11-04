@@ -1,5 +1,5 @@
 <div class="te-container">
-<form name="moduleaccessform" method="" enctype="multipart/form-data">
+<form name="usermoduleaccessform" method="" enctype="multipart/form-data">
 				<div class="access-control">
 
 				<div class="d-flex">
@@ -154,13 +154,16 @@
 <script>
 $(document).on('click','#createmoduleaccess',function(e) {
 	e.preventDefault()
-	// if(($("#userRole").val().trim().length==0))
-	// {
-	// 	alert("Please Select User Role");
-	// 	exit;
-	// }
-    var formdata = new FormData(moduleaccessform);
-	var url= "<?php echo _ROOT; ?>createModuleAccess";
+	if(($("#userRole").val().trim().length==0))
+	{
+		alert("Please Select User Role");
+		exit;
+	}else if(($("#userId").val().trim().length==0)){
+		alert("Please Select User");
+		exit;
+	}
+    var formdata = new FormData(usermoduleaccessform);
+	var url= "<?php echo _ROOT; ?>createUserModuleAccess";
     $.ajax({
 		 url: url, 
 		 cache: false,
@@ -183,19 +186,6 @@ $(document).on('click','#createmoduleaccess',function(e) {
 
 
 
-// $(document).on('change','#userRole',function(e) {
-//     e.preventDefault()
-//     var userRole = $(this).val();
-//     //alert(userRole);
-// 	var url= "<?php echo _ROOT; ?>moduleAccessChecked";
-//     $.post(url ,{userRole : userRole},function(data){
-//         console.log("okkkkkkk",data);
-//         $("#defaultLoad").hide();
-//        $("#dynamicLoad").html(data);
-//     });
-// });
-
-
 $(document).on('change','#userRole',function(e) {
     e.preventDefault()
     var userRole = $(this).val();
@@ -208,11 +198,11 @@ $(document).on('change','#userRole',function(e) {
 
 $(document).on('change','#userId',function(e) {
 	e.preventDefault()
-	alert("Boom");
-	var userRole = $("$userRole").val();
+	var userRole = $("#userRole").val();
 	var userId = $("#userId").val();
 	var url= "<?php echo _ROOT; ?>userModuleAccessCheckedUser";
     $.post(url ,{userRole : userRole,userId : userId},function(data){
+		console.log(data);
          $("#defaultLoad").hide();
 		 $("#dynamicLoad").html(data);
     });
