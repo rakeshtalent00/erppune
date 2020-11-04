@@ -14,7 +14,7 @@ define("_ROOT",base_url());
 	<link rel="stylesheet" type="text/css" href="assets/css/custom-basic-styles.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/sideNav.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/header.css"/>
-  <link rel="stylesheet" type="text/css" href="<?php  echo _ROOT; ?>assets/css/user-list-view.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/user-list-view.css"/>
 
 	<script src="assets/scripts/font-awesome.js"></script>
 	<script src="assets/scripts/jquery.min.js"></script>
@@ -26,5 +26,6 @@ define("_ROOT",base_url());
 <main class="d-flex">
     <?php if($page){ echo $page; }?>
 </main>
+<?php if($footer){ echo $footer; }?>
 </body>
 </html>
