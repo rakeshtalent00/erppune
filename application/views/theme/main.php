@@ -13,13 +13,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/sideNav.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-list-view.css"/>
-
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user-list-view.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/accessControl.css"/>
-
 	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <?php if($header){ echo $header; }?>
@@ -29,20 +28,4 @@
 </main>
 <?php if($footer){ echo $footer; }?>
 </body>
-<script>
-	<script>
-		$(document).ready(function(){
-			$('.user').click(function(){
-				$('.user').removeClass('active');
-				$(this).addClass('active');
-				$('.user-details').slideUp();
-				$(this).find('.user-details').slideDown();
-			});
-
-			$('tr').click(function(){
-				console.log($(this).parent().parent());
-				$(this).next('.user-details').slideToggle();
-			});
-		});
-</script>
 </html>
