@@ -1,6 +1,3 @@
-<?php 
-define("_ROOT",base_url());
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,16 +7,18 @@ define("_ROOT",base_url());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="<?php echo _ROOT; ?>/assets/images/favicon.ico" type="image/x-icon" rel="icon"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-upload-style.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/custom-basic-styles.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/sideNav.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/header.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-list-view.css"/>
-
-	<script src="<?php echo _ROOT; ?>/assets/scripts/font-awesome.js"></script>
-	<script src="<?php echo _ROOT; ?>/assets/scripts/jquery.min.js"></script>
-    <script src="<?php echo _ROOT; ?>/assets/scripts/custom-common.js"></script>
+    <link href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-upload-style.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/custom-basic-styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/sideNav.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-list-view.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user-list-view.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/accessControl.css"/>
+	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <?php if($header){ echo $header; }?>

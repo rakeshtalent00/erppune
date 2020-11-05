@@ -574,7 +574,6 @@
 <script>
 $(document).on('click','#createuserbtn',function(e) {
 	e.preventDefault()
-
 	if(($("#firstName").val().trim().length==0))
 	{
 		alert("Please Insert First Name");
@@ -611,7 +610,7 @@ $(document).on('click','#createuserbtn',function(e) {
 
 
     var formdata = new FormData(createuserform);
-	var url= "<?php echo _ROOT; ?>createuser";
+	var url= "<?php echo base_url(); ?>createuser";
     $.ajax({
 		 url: url, 
 		 //dataType: "text",

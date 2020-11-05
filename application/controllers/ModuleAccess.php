@@ -1,5 +1,5 @@
 <?php
-class ModuleAccess extends CI_Controller{
+class ModuleAccess extends MY_Controller{
 	function __construct()
 	{
 	 parent::__construct();
@@ -15,8 +15,10 @@ class ModuleAccess extends CI_Controller{
 		$data['moduleList'] = $this->Modulemgt->getModules();
 		$data['subModuleList'] = $this->ModuleAccessmgt->subModuleList();
 		$data['accessList'] = $this->ModuleAccessmgt->accessList();
-		//echo "<pre>";print_r($data);die("Okkkk");
-		$this->load->view("accessListIndex",$data);
+		$this->data = $data;
+		$this->page = "moduleaccess/moduleAccessForm";
+		$this->title = "Module Access";
+		$this->layout();
 	}
 
 	function createModuleAccess(){

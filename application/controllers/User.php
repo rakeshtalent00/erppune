@@ -37,7 +37,10 @@ class User extends MY_Controller{
 	function updateRoleForm(){
 		$userId = $this->uri->segment(3);
 		$data['roleList'] = $this->Usermgt->getRoles($userId);
-		$this->load->view("updateRoleFormIndex",$data);
+		$this->data = $data;
+		$this->page = "user/updateRoleForm";
+		$this->title = "Role Update";
+		$this->layout();
 	}
 
 	

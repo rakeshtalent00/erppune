@@ -58,7 +58,7 @@ $(document).on('click','#updaterolebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(updateroleform);
-	var url= "<?php echo _ROOT; ?>updateRole";
+	var url= "<?php echo base_url(); ?>updateRole";
     $.ajax({
 		 url: url, 
 		 cache: false,

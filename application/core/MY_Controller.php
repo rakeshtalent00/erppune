@@ -1,6 +1,4 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -23,7 +21,7 @@ class MY_Controller extends CI_Controller {
 		$this->data = array();
 		$this->data['title'] = 'Welcome to Talentedge';
 		$this->errors = array();
-	
+
 		$this->load->driver('cache');
 
 		// Prevent some security threats, per Kevin
@@ -45,7 +43,6 @@ class MY_Controller extends CI_Controller {
 		$this->template['sidebar'] = $this->load->view('theme/sideNav',$this->data,TRUE);
 		$this->template['page'] = $this->load->view($this->page,$this->data,TRUE);
 		$this->template['title'] = $this->title;
-
 		$this->load->view('theme/main',$this->template);
 	}
 	

@@ -47,8 +47,10 @@ class Module extends MY_Controller{
 	function updateModuleForm(){
 		$userId = $this->uri->segment(3);
 		$data['moduleList'] = $this->Modulemgt->getModuleData($userId);
-		//echo "<pre>";print_r($data);die("Okkk");
-		$this->load->view("updateModuleFormIndex",$data);
+		$this->title = "Module Listing";
+		$this->data = $data;
+		$this->page = "module/updateModuleForm";
+		$this->layout();
 	}
 
 	function updateModule(){

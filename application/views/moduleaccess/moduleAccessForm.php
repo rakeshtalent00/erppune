@@ -149,7 +149,7 @@ $(document).on('click','#createmoduleaccess',function(e) {
 		exit;
 	}
     var formdata = new FormData(moduleaccessform);
-	var url= "<?php echo _ROOT; ?>createModuleAccess";
+	var url= "<?php echo base_url(); ?>createModuleAccess";
     $.ajax({
 		 url: url, 
 		 cache: false,
@@ -175,7 +175,7 @@ $(document).on('click','#createmoduleaccess',function(e) {
 $(document).on('change','#userRole',function(e) {
     e.preventDefault()
     var userRole = $(this).val();
-	var url= "<?php echo _ROOT; ?>moduleAccessChecked";
+	var url= "<?php echo base_url(); ?>moduleAccessChecked";
     $.post(url ,{userRole : userRole},function(data){
         console.log("okkkkkkk",data);
         $("#defaultLoad").hide();
