@@ -14,6 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-list-view.css"/>
 
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user-list-view.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/accessControl.css"/>
+
 	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>

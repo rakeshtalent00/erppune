@@ -1,5 +1,5 @@
 <?php
-class Designation extends CI_Controller{
+class Designation extends MY_Controller{
 	function __construct()
 	{
 	 parent::__construct();
@@ -9,7 +9,9 @@ class Designation extends CI_Controller{
 	
 	
 	function index(){
-		$this->load->view("designationIndex");
+		$this->page = "designation/createDesignationForm";
+		$this->title = "Create Designation";
+		$this->layout();
 	}
 
 	
@@ -31,14 +33,20 @@ class Designation extends CI_Controller{
 
 	function designationList(){
 		$data['designationList'] = $this->Designationmgt->getDesignation();
-		$this->load->view("designationListIndex.php",$data);
+		$this->data = $data;
+		$this->page = "designation/designationList";
+		$this->title = "Designation List";
+		$this->layout();
 	}
 
 	function updateDesignationForm(){
 		$userId = $this->uri->segment(3);
 		$data['designationList'] = $this->Designationmgt->getDesignationData($userId);
-		//echo "<pre>";print_r($data);die("Okkk");
-		$this->load->view("updateDesignationFormIndex",$data);
+		$this->data = $data;
+		$this->page = "designation/updateDesignationForm";
+		$this->title = "Update Designation";
+		$this->layout();
+		//$this->load->view("updateDesignationFormIndex",$data);
 	}
 
 	function updateDesignation(){
