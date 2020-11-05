@@ -1,5 +1,5 @@
 <?php
-class User extends CI_Controller{
+class User extends MY_Controller{
 	function __construct()
 	{
 	 parent::__construct();
@@ -19,12 +19,24 @@ class User extends CI_Controller{
 		$data['getCountries'] = $this->Usermgt->getCountries();
 		$data['getStates'] = $this->Usermgt->getStates();
 		$data['getCities'] = $this->Usermgt->getCities();
-		$this->load->view("userListIndex.php",$data);
+
+		$this->data = $data;
+		$this->page = "user/listUser";
+		$this->title = "Users List";
+		$this->layout();
+
+		//$this->load->view("userListIndex.php",$data);
 	}
 
 	function roleList(){
 		$data['roleList'] = $this->Usermgt->getRoles();
-		$this->load->view("roleListIndex.php",$data);
+
+		$this->data = $data;
+		$this->page = "user/listRoles";
+		$this->title = "Roles List";
+		$this->layout();
+
+		//$this->load->view("roleListIndex.php",$data);
 	}
 
 
