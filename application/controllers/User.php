@@ -19,24 +19,18 @@ class User extends MY_Controller{
 		$data['getCountries'] = $this->Usermgt->getCountries();
 		$data['getStates'] = $this->Usermgt->getStates();
 		$data['getCities'] = $this->Usermgt->getCities();
-
 		$this->data = $data;
 		$this->page = "user/listUser";
 		$this->title = "Users List";
 		$this->layout();
-
-		//$this->load->view("userListIndex.php",$data);
 	}
 
 	function roleList(){
 		$data['roleList'] = $this->Usermgt->getRoles();
-
 		$this->data = $data;
 		$this->page = "user/listRoles";
 		$this->title = "Roles List";
 		$this->layout();
-
-		//$this->load->view("roleListIndex.php",$data);
 	}
 
 
@@ -55,7 +49,10 @@ class User extends MY_Controller{
 		$data['universityList'] = $this->Usermgt->universitylist();
 		$data['userlist'] = $this->Usermgt->userlist();
 		$data['getRoles']  = $this->Usermgt->getRoles();
-		$this->load->view("userIndex",$data);
+		$this->data = $data;
+		$this->page = "user/createUserForm";
+		$this->title = "Users Form";
+		$this->layout();
 	}
 
 	function updateUserForm(){
@@ -69,12 +66,20 @@ class User extends MY_Controller{
 		$data['getUserUniversity']  = $this->Usermgt->getUserUniversity($userId);
 		$data['getRoles']  = $this->Usermgt->getRoles();
 		$data['getRolesUser']  = $this->Usermgt->getRolesUsers($userId);
+		$this->data = $data;
+		$this->page = "user/updateUserForm";
+		$this->title = "Update Form";
+		$this->layout();
 		//echo "<pre>";print_r($data); die("Okkkk");
-		$this->load->view("updateUserFormIndex",$data);
+		//$this->load->view("updateUserFormIndex",$data);
 	}
 
 	function roleForm(){
-		$this->load->view("roleIndex");
+		$data = "";
+		$this->data = $data;
+		$this->page = "user/createRoleForm";
+		$this->title = "Role Form";
+		$this->layout();
 	}
 	
 	function createuser(){

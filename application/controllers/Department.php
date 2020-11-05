@@ -1,5 +1,5 @@
 <?php
-class Department extends CI_Controller{
+class Department extends MY_Controller{
 	function __construct()
 	{
 	 parent::__construct();
@@ -9,6 +9,10 @@ class Department extends CI_Controller{
 	
 	
 	function index(){
+		$this->data = $data;
+		$this->page = "user/listUser";
+		$this->title = "Users List";
+		$this->layout();
 		$this->load->view("departmentIndex");
 	}
 
