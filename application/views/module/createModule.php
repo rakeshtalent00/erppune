@@ -55,7 +55,7 @@ $(document).on('click','#createmodulebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(createmoduleform);
-	var url= "<?php echo _ROOT; ?>createModule";
+	var url= "<?php echo base_url(); ?>createModule";
     $.ajax({
 		 url: url, 
 		 cache: false,

@@ -70,7 +70,7 @@ $(document).on('click','#createsubmodulebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(createsubmoduleform);
-	var url= "<?php echo _ROOT; ?>createsubModule";
+	var url= "<?php echo base_url(); ?>createsubModule";
     $.ajax({
 		 url: url, 
 		 cache: false,

@@ -260,7 +260,7 @@ $(document).on('click','#updateuserbtn',function(e) {
 	}
 
     var formdata = new FormData(updateuserform);
-	var url= "<?php echo _ROOT; ?>updateuser";
+	var url= "<?php echo base_url(); ?>updateuser";
 	alert(url);
     $.ajax({
 		 url: url, 

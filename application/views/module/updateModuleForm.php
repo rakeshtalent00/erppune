@@ -53,7 +53,7 @@ $(document).on('click','#updatemodulebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(updatemoduleform);
-	var url= "<?php echo _ROOT; ?>updateModule";
+	var url= "<?php echo base_url(); ?>updateModule";
     $.ajax({
 		 url: url, 
 		 cache: false,

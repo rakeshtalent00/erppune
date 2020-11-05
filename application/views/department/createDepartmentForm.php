@@ -47,7 +47,7 @@ $(document).on('click','#createrolebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(createroleform);
-	var url= "<?php echo _ROOT; ?>createDepartment";
+	var url= "<?php echo base_url(); ?>createDepartment";
     $.ajax({
 		 url: url, 
 		 cache: false,

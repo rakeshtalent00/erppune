@@ -67,7 +67,7 @@ $(document).on('click','#updatesubmodulebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(updatesubmoduleform);
-	var url= "<?php echo _ROOT; ?>updatesubModule";
+	var url= "<?php echo base_url(); ?>updatesubModule";
     $.ajax({
 		 url: url, 
 		 cache: false,

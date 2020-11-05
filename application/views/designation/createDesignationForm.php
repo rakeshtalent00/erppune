@@ -47,7 +47,7 @@ $(document).on('click','#createdesignationbtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(createdesignationform);
-	var url= "<?php echo _ROOT; ?>createDesignation";
+	var url= "<?php echo base_url(); ?>createDesignation";
     $.ajax({
 		 url: url, 
 		 cache: false,

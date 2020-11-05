@@ -59,7 +59,7 @@ $(document).on('click','#createrolebtn',function(e) {
 		exit;
 	}
     var formdata = new FormData(createroleform);
-	var url= "<?php echo _ROOT; ?>createRole";
+	var url= "<?php echo base_url(); ?>createRole";
     $.ajax({
 		 url: url, 
 		 cache: false,
