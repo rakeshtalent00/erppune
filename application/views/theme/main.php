@@ -10,15 +10,16 @@ define("_ROOT",base_url());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="assets/css/user-upload-style.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/custom-basic-styles.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/sideNav.css"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/header.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/user-list-view.css"/>
+    <link href="<?php echo _ROOT; ?>/assets/images/favicon.ico" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-upload-style.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/custom-basic-styles.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/sideNav.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-list-view.css"/>
 
-	<script src="assets/scripts/font-awesome.js"></script>
-	<script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/scripts/custom-common.js"></script>
+	<script src="<?php echo _ROOT; ?>/assets/scripts/font-awesome.js"></script>
+	<script src="<?php echo _ROOT; ?>/assets/scripts/jquery.min.js"></script>
+    <script src="<?php echo _ROOT; ?>/assets/scripts/custom-common.js"></script>
 </head>
 <body>
 <?php if($header){ echo $header; }?>
