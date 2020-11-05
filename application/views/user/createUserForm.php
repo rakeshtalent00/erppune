@@ -454,31 +454,6 @@
 	</article>
 </div>
 
-<style>
-	.login-page{
-		/*background: #88D5E9;*/
-	}
-	.login-form{
-		width: 30%;
-		min-width: 300px;
-		padding: 20px; 
-		margin: 40px auto;
-		box-shadow: 0 0 6px gray;
-		text-align: center;
-		background: #ffffffcf;
-		border-radius: 10px;
-	}
-	.login-page .bg-image{
-		background-image: url(http://localhost/erppune/assets/images/loginbg1.jpg);
-	    width: 100%;
-	    position: absolute;
-	    height: 100%;
-	    background-position: center left;
-	    background-size: cover;
-	    opacity: 0.7;
-	    z-index: -1;
-	}
-</style>
 <div class="login-page te-container">
 	<div class="bg-image">
 	</div>
