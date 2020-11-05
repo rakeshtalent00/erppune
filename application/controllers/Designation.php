@@ -43,7 +43,7 @@ class Designation extends CI_Controller{
 
 	function updateDesignation(){
 		//echo "<pre>";print_r($this->input->post());die("Okk");
-		 $data = $this->input->post();
+		$data = $this->input->post();
 		$res = $this->designationIndex->updateDesignation($data);
 		$operation='';
 		if($res==true)

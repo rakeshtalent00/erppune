@@ -16,7 +16,10 @@ define("_ROOT",base_url());
 	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/sideNav.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-list-view.css"/>
+    <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
 
+    
 	<script src="<?php echo _ROOT; ?>/assets/scripts/font-awesome.js"></script>
 	<script src="<?php echo _ROOT; ?>/assets/scripts/jquery.min.js"></script>
     <script src="<?php echo _ROOT; ?>/assets/scripts/custom-common.js"></script>
@@ -29,4 +32,7 @@ define("_ROOT",base_url());
 </main>
 <?php if($footer){ echo $footer; }?>
 </body>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 </html>
