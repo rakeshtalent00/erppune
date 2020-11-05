@@ -6,11 +6,11 @@
 				<span></span>
 				<span></span>
 			</div>
-			<a href="#"><img class="logo-image" src="assets/images/logo_te.png"></a>
+			<a href="#"><img class="logo-image" src="<?php echo base_url() ?>/assets/images/logo_te.png"></a>
 		</div>
 		<div class="header-right">
 			<p class="d-flex">
-				<img class="user-image" src="assets/images/user.png">
+				<img class="user-image" src="<?php echo base_url() ?>/assets/images/user.png">
 				<span>User Name</span>
 			</p>
 			<ul class="d-flex f-col">
