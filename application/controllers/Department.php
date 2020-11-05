@@ -9,11 +9,9 @@ class Department extends MY_Controller{
 	
 	
 	function index(){
-		$this->data = $data;
-		$this->page = "user/listUser";
-		$this->title = "Users List";
+		$this->page = "department/createDepartmentForm";
+		$this->title = "Create Department";
 		$this->layout();
-		$this->load->view("departmentIndex");
 	}
 
 	
@@ -35,14 +33,21 @@ class Department extends MY_Controller{
 
 	function departmentList(){
 		$data['departmentList'] = $this->Departmentmgt->getDepartments();
-		$this->load->view("departmentListIndex.php",$data);
+		$this->data = $data;
+		$this->page = "department/departmentList";
+		$this->title = "Department List";
+		$this->layout();
+		// $this->load->view("departmentListIndex.php",$data);
 	}
 
 	function updateDepartmentForm(){
 		$userId = $this->uri->segment(3);
 		$data['departmentList'] = $this->Departmentmgt->getDepartmentsData($userId);
-		//echo "<pre>";print_r($data);die("Okkk");
-		$this->load->view("updateDepartmentFormIndex",$data);
+		$this->data = $data;
+		$this->page = "department/updateDepartmentForm";
+		$this->title = "Department Update";
+		$this->layout();
+		//$this->load->view("updateDepartmentFormIndex",$data);
 	}
 
 	function updateDepartment(){
