@@ -4,11 +4,12 @@
     left: 0;
     width: 20%;
     background: #88D5E9;
-    height: 100vh;
+    height: 93vh;
     transition: width 0.4s linear;
+    overflow-x: auto;
 }
 .side-nav.squeezed{
-    width: 12%;
+    width: 15%;
     transition: 0.4s linear;
 }
 
@@ -23,8 +24,6 @@
     margin: 0; 
     padding: 0; 
     list-style: none;
-    overflow: hidden;
-    overflow-x: auto;
 }
 .side-nav ul li img{
     vertical-align: middle;
@@ -103,6 +102,7 @@
 
 @media screen and (max-width: 767px){
     .side-nav{
+        height: 95vh;
         transform: translateX(-100%);
         transition: 0.4s linear;
     }

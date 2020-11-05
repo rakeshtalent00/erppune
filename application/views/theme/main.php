@@ -22,8 +22,8 @@
 </head>
 <body>
 <?php if($header){ echo $header; }?>
-    <?php if($sidebar){ echo $sidebar; }?>
 <main class="d-flex">
+    <?php if($sidebar){ echo $sidebar; }?>
     <?php if($page){ echo $page; }?>
 </main>
 <?php if($footer){ echo $footer; }?>
