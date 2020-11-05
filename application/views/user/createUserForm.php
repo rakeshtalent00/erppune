@@ -454,6 +454,58 @@
 	</article>
 </div>
 
+<style>
+	.login-page{
+		/*background: #88D5E9;*/
+	}
+	.login-form{
+		width: 30%;
+		min-width: 300px;
+		padding: 20px; 
+		margin: 40px auto;
+		box-shadow: 0 0 6px gray;
+		text-align: center;
+		background: #ffffffcf;
+		border-radius: 10px;
+	}
+	.login-page .bg-image{
+		background-image: url(http://localhost/erppune/assets/images/loginbg1.jpg);
+	    width: 100%;
+	    position: absolute;
+	    height: 100%;
+	    background-position: center left;
+	    background-size: cover;
+	    opacity: 0.7;
+	    z-index: -1;
+	}
+</style>
+<div class="login-page te-container">
+	<div class="bg-image">
+	</div>
+	<article class="form-style-1 login-form">
+		<form class="form-container">
+			<div class="form-group">
+				<input type="text" id="uname" name="uname" />
+				<label class="floating-label">User Name</label>
+			</div>
+			<div class="form-group">
+				<input type="password" id="password" name="password" />
+				<label class="floating-label">Password</label>
+			</div>
+			<div class="form-group custom-check">
+				<input type="checkbox" name="rememberme" id="rememberme" />
+				<label>Keep Me Signed In</label>
+			</div>
+ 			<div class="form-group cta-submit">
+                <input type="button" id ="loginbtn" value="Sign In" />
+            </div>
+ 			<div class="form-group cta-submit">
+                <input type="button" id ="sbtn" value="Single Sign In" />
+            </div>
+		</form>
+	</article>
+</div>
+
 <script>
 $(document).on('click','#createuserbtn',function(e) {
 	e.preventDefault()

@@ -32,6 +32,30 @@ ul{
 	transition: all 0.4s linear; 
 }
 
+/*
+** Style for Custom Scrollbar
+*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #88d5e9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 /*
 ** Style for Access Control Switch

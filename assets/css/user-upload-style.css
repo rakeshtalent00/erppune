@@ -22,6 +22,7 @@ label.floating-label{
     transition: 0.2s linear;
     pointer-events: none;
 }
+input:checked ~ label,
 input:focus ~ label,
 textarea:focus ~ label,
 .shifted ~ label{
@@ -59,8 +60,6 @@ input[type='file']{
 select{
 	width: 100%;
 }
-
-
  .form-style-1 {
     position: relative;
     padding: 0 20px;
@@ -128,7 +127,7 @@ select{
 form .d-flex {
     justify-content: space-between;
 }
-.d-flex .form-group{
+.d-flex >.form-group{
     width: 48%;
 
 }
@@ -138,6 +137,22 @@ form .d-flex {
 .d-flex .form-group select,
 .d-flex .form-group input{
     width: 100%;
+}
+
+.custom-check{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.custom-check label{
+    color: #000 !important;
+}
+.custom-check input:checked ~ label{
+    color: #244895 !important
+}
+.custom-check input{
+    width: auto !important;
+    margin-right: 5px;
 }
 .cta-submit{
     margin: 15px auto;
