@@ -15,8 +15,8 @@
 				<li>
 						<i class="fas fa-users"></i>Module Access
 						<ul class="submenu">
-						<li><a href="Module"><i class="fas fa-user-cog"></i>Create Module</a></li>
-						<li><a href="moduleList"><i class="fas fa-users-cog"></i>Module List</a></li>
+						<li><a href="<?php echo base_url(); ?>module/create"><i class="fas fa-user-cog"></i>Create Module</a></li>
+						<li><a href="<?php echo base_url(); ?>module"><i class="fas fa-users-cog"></i>Module List</a></li>
 						<li><a href="subModule"><i class="fas fa-user-cog"></i>Create Sub Module</a></li>
 						<li><a href="submoduleList"><i class="fas fa-users-cog"></i>Sub Module List</a></li>
 						<li><a href="accessList"><i class="fas fa-user-plus"></i>Role Access</a></li>

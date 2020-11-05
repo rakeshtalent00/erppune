@@ -10,6 +10,7 @@ define("_ROOT",base_url());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo _ROOT; ?>/assets/images/favicon.ico" type="image/x-icon" rel="icon"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/user-upload-style.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/custom-basic-styles.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo _ROOT; ?>/assets/css/sideNav.css"/>
