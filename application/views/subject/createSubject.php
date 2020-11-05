@@ -33,7 +33,7 @@
 	            
             </div>
 
-            <div class="d-flex">
+            <!-- <div class="d-flex">
             	<div class="form-group">
 	            	<input type="text" id = "createdBy" name="createdBy" />
 	            	<label class="floating-label">Created By<span class="required">*</span></label>
@@ -42,9 +42,9 @@
 	                <input type="text" id = "modifiedBy" name="modifiedBy" />
 	                <label class="floating-label">Modified By<span class="required">*</span></label>
 	            </div>
-	        </div>
+	        </div> -->
 
-			<div class="d-flex">
+			<!-- <div class="d-flex">
 	        	<div class="form-group">    
 	            	<label>Created Date <span class="required">*</span></label>
 	                <input type="date" id = "createdDate" name="createdDate"/>
@@ -53,7 +53,7 @@
 	            	<label>Modified Date <span class="required">*</span></label>
 	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
 	            </div>
-            </div>
+            </div> -->
 
             <div class="d-flex">
 	        	<div class="form-group">    

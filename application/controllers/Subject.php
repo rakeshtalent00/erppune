@@ -11,7 +11,14 @@ class Subject extends MY_Controller{
 		$this->page = "Subject/subjectForm";
 		$this->title = "Dashboard";
 		$this->layout();
-		//$this->load->view("userIndex");
+	}
+
+	function create()
+	{
+		$this->page = "subject/createSubject";
+		$this->title = "Create Subject";
+		$this->layout();
+		
 	}
 }
 ?>

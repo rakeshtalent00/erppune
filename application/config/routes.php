@@ -87,10 +87,6 @@ $route['submoduleList'] = 'SubModule/submoduleList';
 $route['updatesubModule'] = 'SubModule/updatesubModule';
 
 
-$route['subject'] = 'Subject';
-$route['subjectForm'] = 'Subject/subjectForm';
-
-
 $route['roleList'] = 'User/roleList';
 $route['userList'] = 'User/userList';
 $route['roleForm'] = 'User/roleForm';
