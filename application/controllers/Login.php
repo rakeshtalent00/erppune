@@ -7,10 +7,10 @@ class Login extends MY_Controller{
 	}
 	
 	function index(){
-		$this->page = "login/login";
-		$this->title = "Login";
-		$this->layout();
-		//$this->load->view("login/login");
+		// $this->page = "login/login";
+		// $this->title = "Login";
+		// $this->layout();
+		$this->load->view("login/login");
 	}
 	
 

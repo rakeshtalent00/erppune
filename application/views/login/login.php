@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          <title>Login</title>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon" rel="icon"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-upload-style.css"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/custom-basic-styles.css"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/sideNav.css"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/header.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-list-view.css"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user-list-view.css"/>
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/accessControl.css"/>
+    	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
+    	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>
+    </head>
+    <body>
+
+
+
 <div class="login-page te-container">
 	<div class="bg-image">
 	</div>
@@ -26,9 +51,12 @@
 </div>
 
 
+</body>
+</html>
+
+
 <script>
 $(document).on("click","#login",function(){
-	alert("Boom");
 	var valueuser=$("#username").val();
     var username = valueuser.toLowerCase();
 	var password=$("#password").val();

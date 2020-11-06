@@ -11,12 +11,12 @@
 		<div class="header-right">
 			<p class="d-flex">
 				<img class="user-image" src="<?php echo base_url() ?>/assets/images/user.png">
-				<span>User Name</span>
+				<span><?php echo $this->session->userdata('userName'); ?></span>
 			</p>
 			<ul class="d-flex f-col">
-				<li>User Role</li>
+				<li>User Role </li>
 				<li>Settings</li>
-				<li>Logout</li>
+				<li><a href="<?php echo base_url() ?>">Logout</a></li>
 			</ul>
 		</div>
 	</div>
