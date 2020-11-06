@@ -38,7 +38,6 @@
     width: 95%;
     padding: 10px 0 10px 10px; 
     margin-bottom: 0;
-    border-bottom: 1px solid;
     cursor: pointer;
     color: #244895;
 }
@@ -56,11 +55,14 @@
     margin-top: 5px;
     padding:0; 
     padding-left: 0;
-    background: #244895;
+    /*background: #244895;*/
     width: 100%;
 }
-.side-nav .submenu li:hover{
-    background: #0C8FBE;
+.side-nav .submenu li i{
+    display: none;
+}
+.side-nav .submenu li:hover a {
+    color: #88d5e9;
 }
 .side-nav .has-submenu:after{
     display: block;

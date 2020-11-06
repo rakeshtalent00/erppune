@@ -240,7 +240,7 @@
 -- Subject Form
 -->
 
-<!-- <div class="te-container">
+<div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
     		
@@ -280,7 +280,30 @@
 	            	<input type="text" id = "totalMark" name="totalMark" />
 	            	<label class="floating-label">Total Marks<span class="required">*</span></label>
 	            </div>
-	            
+            </div>
+            <div class="form-group">
+            	<label>Select Program<span class="required">*</span></label>
+            	<div class="multiselect" id="countries" multiple="multiple" data-target="multi-0">
+				    <div class="title noselect">
+				        <span class="text">Select</span>
+				        <span class="close-icon">&times;</span>
+				        <span class="expand-icon">&plus;</span>
+				    </div>
+				    <div class="container">
+				        <option value="btech">BTech</option>
+				        <option value="mtech">MTech</option>
+				        <option value="ba">BA</option>
+				        <option value="ma">MA</option>
+				        <option value="mba">MBA</option>
+				        <option value="bca">BCA</option>
+				        <option value="mca">MCA</option>
+				        <option value="mbbs">MBBS</option>
+				        <option value="bds">BDS</option>
+				        <option value="md">MD</option>
+				        <option value="bsc">BSc</option>
+				        <option value="msc">MSc</option>
+				    </div>
+				</div>
             </div>
 
             <div class="d-flex">
@@ -295,7 +318,7 @@
 	        </div>
 	    </form>
 	</article>
-</div> -->
+</div>
 
 <!--
 -- Batch Form

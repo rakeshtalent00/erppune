@@ -15,9 +15,11 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/user-list-view.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user-list-view.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/accessControl.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/multiSelect.css"/>
 	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/scripts/multiSelect.js"></script>
 </head>
 <body>
 <?php if($header){ echo $header; }?>
