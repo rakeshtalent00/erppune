@@ -10,7 +10,9 @@ class Usermgt  extends CI_Model{
 
 		
 	public function createuser($data){
+		$userId = $this->session->userdata('userId');
 		$insertUser = $data;
+		$insertUser['created_by']  = $userId;
 		unset($insertUser['universityId']); 
 		unset($insertUser['roleId']);
 		if(!$this->db->insert('users', $insertUser))

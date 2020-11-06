@@ -7,15 +7,17 @@ class Login extends MY_Controller{
 	}
 	
 	function index(){
-		$this->page = "login/login";
-		$this->title = "Login";
-		$this->layout();
+		// $this->page = "login/login";
+		// $this->title = "Login";
+		// $this->layout();
+		$this->load->view("login/login");
 	}
 	
 
-	function login(){
-		$data = $this->input->post();
-		$res=$this->Usermgt->login($data);
+	function loginCheck(){
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		$res=$this->Login_Modal->login($username,$password);
 		echo $res;
 	}
 	
