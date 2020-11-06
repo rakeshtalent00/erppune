@@ -220,7 +220,7 @@ ul{
         transition: 0.4s linear;
     }
     .te-container.stretched{
-    	transform: translateX(30%);
+    	left: 42% !important;
         transition: 0.4s linear;
     }
 	.mob-only{display: block;}
