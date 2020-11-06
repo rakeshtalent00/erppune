@@ -1,15 +1,12 @@
+<!--
+-- User Creation Form
+-->
+
 <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		<h2>User Management</h2>
-    		<!-- <div class="form-group">
-	            	<label style="display: none;">User Photo <span class="required">*</span></label>
-            		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
-            		<figure class="upload-user-bg">
-            			<img src="assets/images/upload-user.png">
-            			<span>Upload Photo</span>
-            		</figure>
-            </div> -->
+    		<h2>User Information</h2>
+    		
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "firstName" name="firstName" />
@@ -239,17 +236,75 @@
 	</article>
 </div>
 
-<div class="te-container">
+<!--
+-- Subject Form
+-->
+
+<!-- <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		<!-- <div class="form-group">
-	            	<label style="display: none;">User Photo <span class="required">*</span></label>
-            		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
-            		<figure class="upload-user-bg">
-            			<img src="assets/images/upload-user.png">
-            			<span>Upload Photo</span>
-            		</figure>
-            </div> -->
+    		
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "subjectName" name="subjectName" />
+	            	<label class="floating-label">Subject Name<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "subjectCode" name="subjectCode" />
+	            	<label class="floating-label">Subject Code<span class="required">*</span></label>
+	            </div>
+	        </div>
+
+            <div class="d-flex">
+	        	<div class="form-group">    
+	                <textarea id = "subjectDesc" name="subjectDesc" style="resize:none;"></textarea> 
+	            	<label class="floating-label">Subject Description <span class="required">*</span></label>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Subject Status <span class="required">*</span></label>
+	                <select id = "subjectStatus" name="subjectStatus" class="field-divided">
+	                <option value="">Select Status</option>
+	                <option value="Active">Active</option>
+	                <option value="Inactive">Inactive</option>
+	              </select>
+	            </div>
+            </div>    
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "passingMark" name="passingMark" />
+	            	<label class="floating-label">Passing Marks<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "totalMark" name="totalMark" />
+	            	<label class="floating-label">Total Marks<span class="required">*</span></label>
+	            </div>
+	            
+            </div>
+
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
+	    </form>
+	</article>
+</div> -->
+
+<!--
+-- Batch Form
+-->
+
+<!-- <div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+    		
 
             <div class="d-flex">
 	            <div class="form-group">
@@ -316,7 +371,244 @@
             </div>
         </form>
 	</article>
-</div>
+</div> -->
+
+<!--
+-- Program Form
+-->
+
+<!-- <div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+    		
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "programName" name="programName" />
+	            	<label class="floating-label">Program Name<span class="required">*</span></label>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Program Status <span class="required">*</span></label>
+	                <select id = "programStatus" name="programStatus" class="field-divided">
+	                <option value="">Select Status</option>
+	                <option value="Active">Active</option>
+	                <option value="Inactive">Inactive</option>
+	              </select>
+	            </div>
+            </div>    
+
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
+
+			<div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Created Date <span class="required">*</span></label>
+	                <input type="date" id = "createdDate" name="createdDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>Modified Date <span class="required">*</span></label>
+	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
+	            </div>
+            </div>
+            <div class="form-group cta-submit">
+                <input type="button" id ="createuserbtn" value="Submit" />
+            </div>
+        </form>
+	</article>
+</div> -->
+
+<!--
+-- Bank Form
+-->
+
+<!-- <div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "bankName" name="bankName" />
+	            	<label class="floating-label">Bank Name<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "branchName" name="branchName" />
+	            	<label class="floating-label">Branch Name<span class="required">*</span></label>
+	            </div>
+	        </div>
+            <div class="d-flex">
+	            <div class="form-group">
+	                <textarea id = "address" name="address" style="resize:none;"></textarea> 
+	            	<label class="floating-label">Address<span class="required">*</span></label>
+	            </div>
+            </div>    
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "ifscCode" name="ifscCode" />
+	            	<label class="floating-label">IFSC Code<span class="required">*</span></label>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Bank Status <span class="required">*</span></label>
+	                <select id = "bankStatus" name="bankStatus" class="field-divided">
+	                <option value="">Select Status</option>
+	                <option value="Active">Active</option>
+	                <option value="Inactive">Inactive</option>
+	              </select>
+	            </div>
+            </div>
+	        <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "accountNo" name="accountNo" />
+	            	<label class="floating-label">Account No<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "shortCode" name="shortCode" />
+	            	<label class="floating-label">Short Code<span class="required">*</span></label>
+	            </div>
+	        </div>
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
+	        <div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Created Date <span class="required">*</span></label>
+	                <input type="date" id = "createdDate" name="createdDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>Modified Date <span class="required">*</span></label>
+	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
+	            </div>
+            </div>
+            <div class="form-group cta-submit">
+                <input type="button" id ="createuserbtn" value="Submit" />
+            </div>
+	    </form>
+	</article>
+</div> -->
+
+<!--
+-- University Form
+-->
+
+<!-- <div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+    		
+
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "universityName" name="universityName" />
+	            	<label class="floating-label">University Name<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "universityCode" name="universityCode" />
+	            	<label class="floating-label">University Code<span class="required">*</span></label>
+	            </div>
+	        </div>
+            <div class="d-flex">
+	        	<div class="form-group">    
+	                <textarea id = "universityDesc" name="universityDesc" style="resize:none;"></textarea> 
+	            	<label class="floating-label">Description <span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <textarea id = "address" name="address" style="resize:none;"></textarea> 
+	            	<label class="floating-label">Address<span class="required">*</span></label>
+	            </div>
+            </div>    
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="email" id="universityEmail" name="universityEmail" />
+	            	<label class="floating-label">University Email<span class="required">*</span></label>
+	            </div>
+	             <div class="form-group">    
+	            	<label>University Status <span class="required">*</span></label>
+	                <select id = "universityStatus" name="universityStatus" class="field-divided">
+	                <option value="">Select Status</option>
+	                <option value="Active">Active</option>
+	                <option value="Inactive">Inactive</option>
+	              </select>
+	            </div>
+            </div>
+	        <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "logoURL" name="logoURL" />
+	            	<label class="floating-label">Logo URL<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "websiteURL" name="websiteURL" />
+	            	<label class="floating-label">Website URL<span class="required">*</span></label>
+	            </div>
+	        </div>
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
+	        <div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Created Date <span class="required">*</span></label>
+	                <input type="date" id = "createdDate" name="createdDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>Modified Date <span class="required">*</span></label>
+	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
+	            </div>
+            </div>
+            <div class="form-group cta-submit">
+                <input type="button" id ="createuserbtn" value="Submit" />
+            </div>
+	    </form>
+	</article>
+</div> -->
+
+<!--
+-- Login Form
+-->
+
+<!-- <div class="login-page te-container">
+	<div class="bg-image">
+	</div>
+	<article class="form-style-1 login-form">
+		<form class="form-container">
+			<div class="form-group">
+				<input type="text" id="uname" name="uname" />
+				<label class="floating-label">User Name</label>
+			</div>
+			<div class="form-group">
+				<input type="password" id="password" name="password" />
+				<label class="floating-label">Password</label>
+			</div>
+			<div class="form-group custom-check">
+				<input type="checkbox" name="rememberme" id="rememberme" />
+				<label>Keep Me Signed In</label>
+			</div>
+ 			<div class="form-group cta-submit">
+                <input type="button" id ="loginbtn" value="Sign In" />
+            </div>
+ 			<div class="form-group cta-submit">
+                <input type="button" id ="sbtn" value="Single Sign In" />
+            </div>
+		</form>
+	</article>
+</div> -->
 
 <script>
 $(document).on('click','#createuserbtn',function(e) {

@@ -18,12 +18,11 @@
 	<script src="<?php echo base_url(); ?>/assets/scripts/font-awesome.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/scripts/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/scripts/custom-common.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <?php if($header){ echo $header; }?>
-    <?php if($sidebar){ echo $sidebar; }?>
 <main class="d-flex">
+    <?php if($sidebar){ echo $sidebar; }?>
     <?php if($page){ echo $page; }?>
 </main>
 <?php if($footer){ echo $footer; }?>

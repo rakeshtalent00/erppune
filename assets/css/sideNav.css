@@ -3,12 +3,15 @@
     top: 62px;
     left: 0;
     width: 20%;
-    background: #88D5E9;
-    height: 100vh;
+    background: #fff;
+    height: 93vh;
     transition: width 0.4s linear;
+    overflow: hidden;
+    overflow-y: auto;
+    box-shadow: 0 0 9px #244895;
 }
 .side-nav.squeezed{
-    width: 12%;
+    width: 15%;
     transition: 0.4s linear;
 }
 
@@ -23,7 +26,6 @@
     margin: 0; 
     padding: 0; 
     list-style: none;
-    overflow: hidden;
 }
 .side-nav ul li img{
     vertical-align: middle;
@@ -64,7 +66,7 @@
     display: block;
     position: absolute;
     top: 15px;
-    right: 30px;
+    right: 20px;
     content: '\f078';
     font-family: FontAwesome;
     color: #244895;
@@ -86,6 +88,7 @@
     display: block;
     font-size: 20px;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 .side-nav .menu-profile{
@@ -99,14 +102,25 @@
     color: #fff;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
     .side-nav{
-        transform: translateX(-100%);
+        left: 0;
+        width: 25% !important;
         transition: 0.4s linear;
     }
     .side-nav.squeezed{
-        transform: translateX(0);
+        left: -35%;
+        transition: 0.4s linear;
+    }
+}
+@media screen and (max-width: 767px){
+    .side-nav{
+        left: -35%;
         width: 30% !important;
+        transition: 0.4s linear;
+    }
+    .side-nav.squeezed{
+        left: 0;
         transition: 0.4s linear;
     }
     .side-nav li i{
