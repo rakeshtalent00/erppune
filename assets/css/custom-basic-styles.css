@@ -27,8 +27,8 @@ ul{
     transition: all 0.4s linear;
 }
 .te-container.stretched{
-	width: 88% !important;
-    left: 5% !important;
+	width: 85% !important;
+    left: 7% !important;
 	transition: all 0.4s linear; 
 }
 
@@ -75,7 +75,7 @@ ul{
     border-radius: 10px;
 }
 .login-page .bg-image{
-    background-image: url(http://localhost/erppune/assets/images/loginbg1.jpg);
+    background-image: url("<?php echo base_url(); ?>/assets/images/loginbg1.jpg");
     width: 100%;
     position: absolute;
     height: 100%;
@@ -203,9 +203,13 @@ ul{
     overflow-x: auto;
 }
 @media screen and (max-width: 768px){
+    .te-container{
+        width: 75% !important;
+        left: 13% !important;
+    }
     .te-container.stretched{
-	    width: 88% !important;
-	    left: 6% !important;
+	    width: 100% !important;
+	    left: 0 !important;
 	    transition: all 0.4s linear;
 	}
 }

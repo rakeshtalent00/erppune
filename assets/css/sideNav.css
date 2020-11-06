@@ -3,11 +3,12 @@
     top: 62px;
     left: 0;
     width: 20%;
-    background: #88D5E9;
+    background: #fff;
     height: 93vh;
     transition: width 0.4s linear;
     overflow: hidden;
     overflow-y: auto;
+    box-shadow: 0 0 9px #244895;
 }
 .side-nav.squeezed{
     width: 15%;
@@ -101,15 +102,25 @@
     color: #fff;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
     .side-nav{
-        height: 95vh;
-        left : -50%;
+        left: 0;
+        width: 25% !important;
         transition: 0.4s linear;
     }
     .side-nav.squeezed{
-        left : 0;
+        left: -35%;
+        transition: 0.4s linear;
+    }
+}
+@media screen and (max-width: 767px){
+    .side-nav{
+        left: -35%;
         width: 30% !important;
+        transition: 0.4s linear;
+    }
+    .side-nav.squeezed{
+        left: 0;
         transition: 0.4s linear;
     }
     .side-nav li i{

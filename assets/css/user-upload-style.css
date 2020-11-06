@@ -99,7 +99,7 @@ select{
     border-color: #88D5E9;
 }
 .form-style-1 input[type=submit], .form-style-1 input[type=button]{
-    background: #4B99AD;
+    background: #88D5E9;
     border: none;
     color: #fff;
 }
@@ -159,9 +159,13 @@ form .d-flex {
     text-align: center;
 }
 .cta-submit input{
-    width: 40%;
+    width: 40% !important;
     margin: auto;
     padding: 10px 5px;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0px 2px 5px #33559e;
+    cursor: pointer;
 
 }
 @media screen and (max-width: 768px){
