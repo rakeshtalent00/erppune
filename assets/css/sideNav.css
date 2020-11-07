@@ -11,7 +11,7 @@
     box-shadow: 0 0 9px #244895;
 }
 .side-nav.squeezed{
-    width: 15%;
+    width: 11%;
     transition: 0.4s linear;
 }
 
@@ -30,6 +30,9 @@
 .side-nav ul li img{
     vertical-align: middle;
     margin-right: 7px;
+}
+.side-nav ul li.active{
+    border-bottom: 1px solid;
 }
 .side-nav ul li{
     position: relative;
@@ -58,9 +61,11 @@
     /*background: #244895;*/
     width: 100%;
 }
-.side-nav .submenu li i{
+.side-nav .submenu li i,
+.side-nav.squeezed .submenu li i{
     display: none;
 }
+
 .side-nav .submenu li:hover a {
     color: #88d5e9;
 }

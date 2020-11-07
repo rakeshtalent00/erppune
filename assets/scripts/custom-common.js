@@ -33,8 +33,8 @@ $(document).ready(function() {
 	$('.side-nav li .submenu').parent().addClass('has-submenu');
 
 	$('.side-nav li').click(function(){
-		$('.side-nav li').removeClass('active');
-		$(this).addClass('active');
+		// $('.side-nav li').not(this).removeClass('active');
+		$(this).toggleClass('active');
 
 		$(this).find('.submenu').slideToggle();
 		// $('.submenu').slideUp();

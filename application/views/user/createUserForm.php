@@ -6,7 +6,6 @@
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
     		<h2>User Information</h2>
-    		
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "firstName" name="firstName" />
@@ -17,7 +16,6 @@
 	            	<label class="floating-label">Last Name<span class="required">*</span></label>
 	            </div>
 	        </div>
-
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "userEmail" name="userEmail" />
@@ -27,9 +25,7 @@
 	            	<input type="text" id = "employeeCode" name="employeeCode" />
 	            	<label class="floating-label">Employee Code<span class="required">*</span></label>
 	            </div>
-	            
             </div>
-
             <div class="d-flex">
             	<div class="form-group">
 	            	<input type="text" id = "userName" name="userName" />
@@ -44,8 +40,6 @@
 	                <label class="floating-label">Confirm Password<span class="required">*</span></label>
 	            </div>
 	        </div>
-	            
-
             <div class="d-flex">
 	            <div class="form-group">    
 	            	<label>Gender <span class="required">*</span></label>
@@ -243,8 +237,7 @@
 <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		
-
+    		<h2>Subject Information</h2>
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "subjectName" name="subjectName" />
@@ -255,7 +248,6 @@
 	            	<label class="floating-label">Subject Code<span class="required">*</span></label>
 	            </div>
 	        </div>
-
             <div class="d-flex">
 	        	<div class="form-group">    
 	                <textarea id = "subjectDesc" name="subjectDesc" style="resize:none;"></textarea> 
@@ -306,16 +298,7 @@
 				</div>
             </div>
 
-            <div class="d-flex">
-            	<div class="form-group">
-	            	<input type="text" id = "createdBy" name="createdBy" />
-	            	<label class="floating-label">Created By<span class="required">*</span></label>
-	            </div>
-	            <div class="form-group">
-	                <input type="text" id = "modifiedBy" name="modifiedBy" />
-	                <label class="floating-label">Modified By<span class="required">*</span></label>
-	            </div>
-	        </div>
+           
 	    </form>
 	</article>
 </div>
@@ -327,8 +310,7 @@
 <!-- <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		
-
+    		<h2>Batch Information</h2>
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "batchName" name="batchName" />
@@ -366,29 +348,6 @@
 	            </div>
             </div>
 
-            <div class="d-flex">
-            	<div class="form-group">
-	            	<input type="text" id = "createdBy" name="createdBy" />
-	            	<label class="floating-label">Created By<span class="required">*</span></label>
-	            </div>
-	            <div class="form-group">
-	                <input type="text" id = "modifiedBy" name="modifiedBy" />
-	                <label class="floating-label">Modified By<span class="required">*</span></label>
-	            </div>
-	        </div>
-
-			<div class="d-flex">
-	        	<div class="form-group">    
-	            	<label>Created Date <span class="required">*</span></label>
-	                <input type="date" id = "createdDate" name="createdDate"/>
-	            </div>
-	            <div class="form-group">    
-	            	<label>Modified Date <span class="required">*</span></label>
-	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
-	            </div>
-            </div>
-
-
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
@@ -403,8 +362,7 @@
 <!-- <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		
-
+    		<h2>Program Information</h2>
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "programName" name="programName" />
@@ -419,28 +377,6 @@
 	              </select>
 	            </div>
             </div>    
-
-            <div class="d-flex">
-            	<div class="form-group">
-	            	<input type="text" id = "createdBy" name="createdBy" />
-	            	<label class="floating-label">Created By<span class="required">*</span></label>
-	            </div>
-	            <div class="form-group">
-	                <input type="text" id = "modifiedBy" name="modifiedBy" />
-	                <label class="floating-label">Modified By<span class="required">*</span></label>
-	            </div>
-	        </div>
-
-			<div class="d-flex">
-	        	<div class="form-group">    
-	            	<label>Created Date <span class="required">*</span></label>
-	                <input type="date" id = "createdDate" name="createdDate"/>
-	            </div>
-	            <div class="form-group">    
-	            	<label>Modified Date <span class="required">*</span></label>
-	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
-	            </div>
-            </div>
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
@@ -455,6 +391,7 @@
 <!-- <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
+    		<h2>Bank Information</h2>
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "bankName" name="bankName" />
@@ -494,27 +431,7 @@
 	            	<input type="text" id = "shortCode" name="shortCode" />
 	            	<label class="floating-label">Short Code<span class="required">*</span></label>
 	            </div>
-	        </div>
-            <div class="d-flex">
-            	<div class="form-group">
-	            	<input type="text" id = "createdBy" name="createdBy" />
-	            	<label class="floating-label">Created By<span class="required">*</span></label>
-	            </div>
-	            <div class="form-group">
-	                <input type="text" id = "modifiedBy" name="modifiedBy" />
-	                <label class="floating-label">Modified By<span class="required">*</span></label>
-	            </div>
-	        </div>
-	        <div class="d-flex">
-	        	<div class="form-group">    
-	            	<label>Created Date <span class="required">*</span></label>
-	                <input type="date" id = "createdDate" name="createdDate"/>
-	            </div>
-	            <div class="form-group">    
-	            	<label>Modified Date <span class="required">*</span></label>
-	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
-	            </div>
-            </div>
+	        </div>  
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
@@ -529,8 +446,7 @@
 <!-- <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
-    		
-
+    		<h2>University Information</h2>
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "universityName" name="universityName" />
@@ -575,32 +491,138 @@
 	            	<label class="floating-label">Website URL<span class="required">*</span></label>
 	            </div>
 	        </div>
-            <div class="d-flex">
-            	<div class="form-group">
-	            	<input type="text" id = "createdBy" name="createdBy" />
-	            	<label class="floating-label">Created By<span class="required">*</span></label>
-	            </div>
-	            <div class="form-group">
-	                <input type="text" id = "modifiedBy" name="modifiedBy" />
-	                <label class="floating-label">Modified By<span class="required">*</span></label>
-	            </div>
-	        </div>
-	        <div class="d-flex">
-	        	<div class="form-group">    
-	            	<label>Created Date <span class="required">*</span></label>
-	                <input type="date" id = "createdDate" name="createdDate"/>
-	            </div>
-	            <div class="form-group">    
-	            	<label>Modified Date <span class="required">*</span></label>
-	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
-	            </div>
-            </div>
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
 	    </form>
 	</article>
 </div> -->
+
+<!--
+-- Course Special Form
+-->
+
+<div class="te-container">
+	<article class="form-style-1">
+    	<form name="createuserform" method="" enctype="multipart/form-data">
+            <div class="d-flex">
+	            <div class="form-group">
+	            	<input type="text" id = "courseName" name="courseName" />
+	            	<label class="floating-label">Course Name<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" id = "courseShortName" name="courseShortName" />
+	            	<label class="floating-label">Short Name<span class="required">*</span></label>
+	            </div>
+	        </div>
+            <div class="d-flex">
+	             <div class="form-group">    
+	            	<label>Course Status <span class="required">*</span></label>
+	                <select id = "courseStatus" name="courseStatus" class="field-divided">
+		                <option value="">Select Status</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+	            <div class="form-group">
+	                <textarea id = "address" name="address" style="resize:none;"></textarea> 
+	            	<label class="floating-label">Address<span class="required">*</span></label>
+	            </div>
+            </div>
+            <div class="d-flex">
+	             <div class="form-group">    
+	            	<label>Qualification <span class="required">*</span></label>
+	                <select id = "qualification" name="qualification" class="field-divided">
+		                <option value="">Select qualification</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Stream <span class="required">*</span></label>
+	                <select id = "stream" name="stream" class="field-divided">
+		                <option value="">Select Qualification</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+            </div>
+
+            <div class="d-flex">
+	             <div class="form-group">    
+	            	<label>Duration <span class="required">*</span></label>
+	                <select id = "duration" name="duration" class="field-divided">
+		                <option value="">Select Duration</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Payment Gateway <span class="required">*</span></label>
+	                <select id = "gateway" name="gateway" class="field-divided">
+		                <option value="">Select Gateway</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+            </div>
+
+            <div class="d-flex">
+	             <div class="form-group">    
+	            	<label>No. of Semesters <span class="required">*</span></label>
+	                <select id = "semesterNum" name="semesterNum" class="field-divided">
+		                <option value="">No of Semesters</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Is Course Free <span class="required">*</span></label>
+	                <select id = "courseFree" name="courseFree" class="field-divided">
+		                <option value="">Select</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+            </div>
+
+            <div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Start Date <span class="required">*</span></label>
+	                <input type="date" id = "semesterStartDate" name="semesterStartDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>End Date <span class="required">*</span></label>
+	                <input type="date" id = "semesterEndDate" name="semesterEndtDate"/>
+	            </div>
+            </div>
+
+            <div class="d-flex">
+	             <div class="form-group">    
+	            	<label>Admission Type <span class="required">*</span></label>
+	                <select id = "admissionType" name="admissionType" class="field-divided">
+		                <option value="">Select Type</option>
+		                <option value="Regular">Regular</option>
+		            	<option value="Lateral">Lateral</option>
+		            	<option value="Upgrade">Upgrade</option>
+		            </select>
+	            </div>
+	             <div class="form-group">    
+	            	<label>Tax Required<span class="required">*</span></label>
+	                <select id = "taxReq" name="texReq" class="field-divided">
+		                <option value="">Select</option>
+		                <option value="Active">Active</option>
+		            	<option value="Inactive">Inactive</option>
+		            </select>
+	            </div>
+            </div>
+	        
+            <div class="form-group cta-submit">
+                <input type="button" id ="createuserbtn" value="Submit" />
+            </div>
+	    </form>
+	</article>
+</div>
 
 <!--
 -- Login Form

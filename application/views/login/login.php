@@ -26,6 +26,8 @@
 <div class="login-page te-container">
 	<div class="bg-image">
 	</div>
+	<div class="logo"><a href="#"><img class="logo-image" src="<?php echo base_url() ?>/assets/images/logo_te.png"></a>
+</div>
 	<article class="form-style-1 login-form">
 		<form class="form-container">
 			<div class="form-group">
