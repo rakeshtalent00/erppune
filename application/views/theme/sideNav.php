@@ -40,12 +40,22 @@
 					<li>
 						<i class="fas fa-users"></i>Course Management
 						<ul class="submenu">
-						<li><a href="<?php echo base_url(); ?>subject/create"><i class="fas fa-user-cog"></i><span>Create Subject</span></a></li>
-						<li><a href="<?php echo base_url(); ?>subject"><i class="fas fa-users-cog"></i><span>All Subjects</span></a></li>
-						</ul>
-					</li>
+							<li><a href="<?php echo base_url(); ?>subject/create"><i class="fas fa-user-cog"></i>Create Subject</a></li>
+							<li><a href="<?php echo base_url(); ?>subject"><i class="fas fa-users-cog"></i>All Subjects</a></li>
 
-					
+							<li><a href="<?php echo base_url(); ?>batch/create"><i class="fas fa-user-cog"></i>Create Batch</a></li>
+							<li><a href="<?php echo base_url(); ?>batch"><i class="fas fa-users-cog"></i>All Batches</a></li>
+
+							<li><a href="<?php echo base_url(); ?>university/create"><i class="fas fa-user-cog"></i>Create University</a></li>
+							<li><a href="<?php echo base_url(); ?>university"><i class="fas fa-users-cog"></i>All University</a></li>
+
+							<li><a href="<?php echo base_url(); ?>program/create"><i class="fas fa-user-cog"></i>Create Program</a></li>
+							<li><a href="<?php echo base_url(); ?>program"><i class="fas fa-users-cog"></i>All Programs</a></li>
+
+							<li><a href="<?php echo base_url(); ?>bank/create"><i class="fas fa-user-cog"></i>Create New Bank</a></li>
+							<li><a href="<?php echo base_url(); ?>bank"><i class="fas fa-users-cog"></i>All Banks</a></li>
+						</ul>
+					</li>					
 					</ul>
 			</div>
 		</nav>

@@ -23,7 +23,6 @@ ul{
 	width: 80% !important;
     left: 10% !important;
     top: 62px;
-    overflow-y: auto;
     transition: all 0.4s linear;
 }
 .te-container.stretched{

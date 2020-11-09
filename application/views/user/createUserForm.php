@@ -1,11 +1,16 @@
-<!--
--- User Creation Form
--->
-
 <div class="te-container">
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
     		<h2>User Information</h2>
+
+    		<!-- <div class="form-group">
+	            	<label style="display: none;">User Photo <span class="required">*</span></label>
+            		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
+            		<figure class="upload-user-bg">
+            			<img src="assets/images/upload-user.png">
+            			<span>Upload Photo</span>
+            		</figure>
+            </div> -->
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "firstName" name="firstName" />
@@ -238,6 +243,14 @@
 	<article class="form-style-1">
     	<form name="createuserform" method="" enctype="multipart/form-data">
     		<h2>Subject Information</h2>
+    		<!-- <div class="form-group">
+	            	<label style="display: none;">User Photo <span class="required">*</span></label>
+            		<input type="file" id = "userPhoto" name="userPhoto" placeholder="description" />
+            		<figure class="upload-user-bg">
+            			<img src="assets/images/upload-user.png">
+            			<span>Upload Photo</span>
+            		</figure>
+            </div> -->
             <div class="d-flex">
 	            <div class="form-group">
 	            	<input type="text" id = "subjectName" name="subjectName" />
@@ -250,8 +263,8 @@
 	        </div>
             <div class="d-flex">
 	        	<div class="form-group">    
+	            	<label>Subject Description <span class="required">*</span></label>
 	                <textarea id = "subjectDesc" name="subjectDesc" style="resize:none;"></textarea> 
-	            	<label class="floating-label">Subject Description <span class="required">*</span></label>
 	            </div>
 	             <div class="form-group">    
 	            	<label>Subject Status <span class="required">*</span></label>
@@ -297,8 +310,6 @@
 				    </div>
 				</div>
             </div>
-
-           
 	    </form>
 	</article>
 </div>
@@ -347,7 +358,27 @@
 	                <input type="date" id = "batchEndDate" name="batchEndtDate"/>
 	            </div>
             </div>
+            <div class="d-flex">
+            	<div class="form-group">
+	            	<input type="text" id = "createdBy" name="createdBy" />
+	            	<label class="floating-label">Created By<span class="required">*</span></label>
+	            </div>
+	            <div class="form-group">
+	                <input type="text" id = "modifiedBy" name="modifiedBy" />
+	                <label class="floating-label">Modified By<span class="required">*</span></label>
+	            </div>
+	        </div>
 
+			<div class="d-flex">
+	        	<div class="form-group">    
+	            	<label>Created Date <span class="required">*</span></label>
+	                <input type="date" id = "createdDate" name="createdDate"/>
+	            </div>
+	            <div class="form-group">    
+	            	<label>Modified Date <span class="required">*</span></label>
+	                <input type="date" id = "modifiedDate" name="modifiedDate"/>
+	            </div>
+            </div>
             <div class="form-group cta-submit">
                 <input type="button" id ="createuserbtn" value="Submit" />
             </div>
@@ -658,6 +689,7 @@
 <script>
 $(document).on('click','#createuserbtn',function(e) {
 	e.preventDefault()
+
 	if(($("#firstName").val().trim().length==0))
 	{
 		alert("Please Insert First Name");
@@ -694,7 +726,7 @@ $(document).on('click','#createuserbtn',function(e) {
 
 
     var formdata = new FormData(createuserform);
-	var url= "<?php echo base_url(); ?>createuser";
+	var url= "<?php echo _ROOT; ?>createuser";
     $.ajax({
 		 url: url, 
 		 //dataType: "text",

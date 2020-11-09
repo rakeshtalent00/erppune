@@ -127,6 +127,65 @@ CREATE TABLE `subjects` (
   `modified_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
+
+ CREATE TABLE `batches` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(200) NOT NULL,
+  `code` varchar(20) NOT NULL,
+  `start_date` datetime NULL,
+  `end_date`  datetime NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(11) NULL,
+  `modified_by` int(11) NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+ CREATE TABLE `program` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(200) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(11) NULL,
+  `modified_by` int(11) NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+ CREATE TABLE `banks` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `branch_name` varchar(255) NOT NULL,
+  `ifsc_code` varchar(255) NOT NULL,
+  `address` text NULL,
+  `account_no` varchar(255) NOT NULL,
+  `shortcode` varchar(50) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(11) NULL,
+  `modified_by` int(11) NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+ CREATE TABLE `payment_type` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(11) NULL,
+  `modified_by` int(11) NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+ CREATE TABLE `bank_payment_type_mappings` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `bank_id` int(11) NOT NULL,
+  `payment_type_id` int(11) NOT NULL
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
 ------------------------------------------------------------------------------
 --
 -- Dumping data for table `cities`
@@ -9872,6 +9931,5 @@ ALTER TABLE `user_university`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 */
 
-CREATE
 
 
