@@ -2,16 +2,26 @@
 class Login extends MY_Controller{
 	function __construct()
 	{
-	 parent::__construct();
-	$this->load->model('Login_Modal');
+	 	parent::__construct();
+		$this->load->model('Login_Modal');
+
+		if($this->session->userdata('authenticated'))
+		{
+			redirect('userform');
+		}
+		
 	}
 	
 	function index(){
 		// $this->page = "login/login";
 		// $this->title = "Login";
 		// $this->layout();
-		$this->load->view("login/login");
+		
+		redirect('user/secure_login');
+		//$this->load->view("login/login");
 	}
+
+	
 	
 
 	function loginCheck(){
@@ -21,7 +31,15 @@ class Login extends MY_Controller{
 		echo $res;
 	}
 	
-	
+	function logout()
+	{
+		# code...
+		if($this->input->method() == 'post')
+		{
+			$this->session->sess_destroy();
+			redirect('user/secure_login');
+		}
+	}
 	// function logout(){
 	// 	$userid = $this->session->userdata("userid");
 	// 	session_destroy();

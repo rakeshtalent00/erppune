@@ -25,6 +25,10 @@
 
 <div class="login-page te-container">
 	<div class="bg-image">
+	<!--- Success Message --->
+	<?php if ($this->session->flashdata('login_first')) { ?>
+	<p style="font-size: 20px; color:red"><?php echo $this->session->flashdata('login_first'); ?></p>
+	<?php }?>
 	</div>
 	<article class="form-style-1 login-form">
 		<form class="form-container">

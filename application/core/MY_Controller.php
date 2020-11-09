@@ -18,11 +18,13 @@ class MY_Controller extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->checkAuth($this->session->userdata);
 		$this->data = array();
 		$this->data['title'] = 'Welcome to Talentedge';
 		$this->errors = array();
 
 		$this->load->driver('cache');
+		
 
 		// Prevent some security threats, per Kevin
 		// Turn on IE8-IE9 XSS prevention tools
@@ -44,6 +46,25 @@ class MY_Controller extends CI_Controller {
 		$this->template['page'] = $this->load->view($this->page,$this->data,TRUE);
 		$this->template['title'] = $this->title;
 		$this->load->view('theme/main',$this->template);
+	}
+
+
+	/**
+	 * @author: Sandeep Sharma
+	 * @return: boolean
+	 * Filter to Check the Authenticated requests
+	 */
+	public function checkAuth($authData)
+	{
+		# code...
+		$except = ["secure_login","LoginCheck"];
+		if( isset($authData['userId']) == false &&  in_array($this->router->method,$except)==false )
+		{
+			$this->session->set_flashdata('login_first', 'Login first to proceed');
+			redirect('user/secure_login');
+		}
+		
+		
 	}
 	
 

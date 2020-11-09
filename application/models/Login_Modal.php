@@ -23,6 +23,7 @@ class Login_Modal  extends CI_Model{
                         'userId'	=> $res->id,
                         'userType'	=> $res->employeeCode,
                         'userName'	=> $res->firstName . " " . $res->lastName,
+                        'authenticated' => TRUE
                     ));
                 
                     //$this->session->set_userdata('useracl',$useracl);

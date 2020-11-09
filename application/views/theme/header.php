@@ -8,6 +8,8 @@
 			</div>
 			<a href="#"><img class="logo-image" src="<?php echo base_url() ?>/assets/images/logo_te.png"></a>
 		</div>
+
+		<?php if($this->session->userdata('authenticated')){ ?>
 		<div class="header-right">
 			<p class="d-flex">
 				<img class="user-image" src="<?php echo base_url() ?>/assets/images/user.png">
@@ -19,6 +21,9 @@
 				<li><a href="<?php echo base_url() ?>">Logout</a></li>
 			</ul>
 		</div>
+		<?php } ?>
+
+
 	</div>
 </header>
 <script>

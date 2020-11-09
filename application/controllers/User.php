@@ -2,14 +2,23 @@
 class User extends MY_Controller{
 	function __construct()
 	{
-	 parent::__construct();
-	$this->load->model('Usermgt');
+	 	parent::__construct();
+		$this->load->model('Usermgt');
 	}
 	
 	
 	
 	function index(){
 		$this->load->view("user");
+	}
+
+	function secure_login()
+	{
+		if($this->session->userdata('authenticated'))
+		{
+			redirect('userform');
+		}
+		$this->load->view("login/login");
 	}
 
 	
